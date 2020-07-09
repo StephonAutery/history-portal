@@ -46,6 +46,7 @@ export default class Users extends Component {
                     stats: res.data,
                 })
             });
+
         API.getUserById(this.props.location.state.id)
             .then(res => {
                 this.setState({
@@ -63,47 +64,70 @@ export default class Users extends Component {
     }
 
     render() {
-        let min = 1;
-        let max = 1000;
         return (
             < Container >
                 <div className="container w-75">
-                    {/* <h3><p>You Are: { this.state.user.name }</p></h3> */}
                     <hr />
+
                     <div className="row">
-
-                        <div className="col">
-                            <div className="row card p-2 m-1">
-                                <p>player ID:</p>
-                                <p>{ this.state.user.name }</p>
-                            </div>
-                            <div className="row card p-2 m-1">
-                                <p>number correct:</p>
-                                <p>{this.props.location.state.numRight}</p>
-                                <p>number incorrect:</p>
-                                <p>{this.props.location.state.numWrong}</p>
-                                <p>percentage correct:</p>
-                                <p>{this.state.percentageCorrect} %</p>
-                                <p>percentage incorrect:</p>
-                                <p>{this.state.percentageIncorrect} %</p>
+                        <div className="col-sm-6">
+                            <div className="card m-1">
+                                <div className="card-body">
+                                    <h5 className="card-title">Your Statistics</h5>
+                                </div>
                             </div>
                         </div>
-
-                        <div className="col card p-2 m-1">
-                            <p>correct answers</p>
-                            {this.state.questions.map(question => (
-                                <p key={ question._id }>{ question.answer }</p>
-                            ))}
+                        <div className="col-sm-6">
+                            <div className="card m-1">
+                                <div className="card-body">
+                                    <h5 className="card-title">{this.state.user.name}</h5>
+                                </div>
+                            </div>
                         </div>
-
-                        <div className="col card p-2 m-1">
-                            <p>your answers</p>
-                            {this.props.location.state.answers.map(answer => (
-                                <p key={ min + (Math.random() * (max - min)) }> { answer }</p>
-                            ))}
-                        </div>
-
                     </div>
+
+                    <div className="row">
+                        <div className="col-sm-6">
+                            <div className="card border-success m-1">
+                                <div className="card-body text-success">
+                                    <h5 className="card-title">Number Correct</h5>
+                                    <hr />
+                                    <p className="card-text">{this.props.location.state.numRight}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-sm-6">
+                            <div className="card border-success m-1">
+                                <div className="card-body text-success">
+                                    <h5 className="card-title">Percentage Correct</h5>
+                                    <hr />
+                                    <p className="card-text">{this.state.percentageCorrect}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-sm-6">
+                            <div className="card border-danger m-1">
+                                <div className="card-body text-danger">
+                                    <h5 className="card-title">Number Incorrect</h5>
+                                    <hr />
+                                    <p className="card-text">{this.props.location.state.numWrong}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-sm-6">
+                            <div className="card border-danger m-1">
+                                <div className="card-body text-danger">
+                                    <h5 className="card-title">Percentage Incorrect</h5>
+                                    <hr />
+                                    <p className="card-text">{this.state.percentageIncorrect}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </Container >
         )

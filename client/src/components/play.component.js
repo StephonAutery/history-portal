@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
+import API from '../utils/API';
 
 export default class Landing extends Component {
     state = {
-        redirect: ""
+        redirect: "",
+        user: ""
     }
     constructor(props) {
         super(props);
@@ -13,11 +15,19 @@ export default class Landing extends Component {
     }
 
     componentDidMount() {
+        console.log(this.props);
         if (!localStorage.getItem('loginData')) {
             this.setState({
-                redirect: "landing"
+                redirect: "landing",
             })
         }
+
+        API.getUserById(this.props.location.state.id.userid)
+        .then(res => {
+            this.setState({
+                user: res.data.user
+            });
+        });
     }
 
     playStephon(event) {
@@ -53,42 +63,77 @@ export default class Landing extends Component {
         return (
             <div className="container w-75">
                 <form>
-                    <div className="card p-4 m-4">
-                        <h4>question sets</h4>
+
+                    <div className="row">
+                        <div className="col-sm-6">
+                            <hr />
+                            <div className="card m-1">
+                                <div className="card-body">
+                                    <h5 className="card-text">Question Sets</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-sm-6">
+                            <hr />
+                            <div className="card m-1">
+                                <div className="card-body">
+                                    <h5 className="card-text">{this.state.user.name}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
                     </div>
-                    <div className="card p-4 m-4">
-                        <p>Susannah Levy is an OBGyn/Obstetrics Nurse at UCSF General Hospital and the Mother of 2.</p>
-                        <p>
-                            <button
-                                className="save btn btn-info"
-                                onClick={this.playSue}
-                                type="submit"
-                                value="submit">Susannah Levy
-                            </button>
-                        </p>
+
+                    <div className="row">
+                        <div className="col-sm-6">
+                            <div className="card m-1">
+                                <div className="card-body">
+                                    <h5 className="card-title">Stephon Autery</h5>
+                                    <p className="card-text">Stephon Autery identifies as a Black, cis gendered Male. He served 8 years in the United States Marine Corps, worked the last 14 years as a Stay at Home Dad and is now pursuing work as a Full Stack Developer after completeing the UC Berkeley Extension's Full Stack Developer Coding Boot Camp in June of 2020.</p>
+                                    <button
+                                        className="save btn btn-primary"
+                                        onClick={this.playStephon}
+                                        type="submit"
+                                        value="submit">Stephon's Quiz
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-sm-6">
+                            <div className="card m-1">
+                                <div className="card-body">
+                                    <h5 className="card-title">Susannah Levy</h5>
+                                    <p className="card-text">Susannah Levy identifies as a White, cis gendered Female. She has served as an OBGyn/Obstetrics Nurse at <a href="https://zuckerbergsanfranciscogeneral.org/about-us/" target="_blank" rel="noopener noreferrer">UCSF General Hospital</a> for the last 23 years and is the Mother of 2 adult children.
+                                    </p>
+                                    <button
+                                        className="save btn btn-primary"
+                                        onClick={this.playSue}
+                                        type="submit"
+                                        value="submit">Susannah's Quiz
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="card p-4 m-4">
-                        <p>Stephon Autery is a Full Stack Developer and the Father of 2.</p>
-                        <p>
-                            <button
-                                className="save btn btn-info"
-                                onClick={this.playStephon}
-                                type="submit"
-                                value="submit">Stephon Autery
-                            </button>
-                        </p>
+
+                    <div className="row">
+                        <div className="col-sm-6">
+                            <div className="card m-1">
+                                <div className="card-body">
+                                    <h5 className="card-title">Who's Your President</h5>
+                                    <p className="card-text">Explore the un-filtered histories of the Presidents of the United States.</p>
+                                    <p className="card-text">Even today, text books in US Schools vary wildly from one school district to the next and the only thing they have in common is a biased editing of the history of the American Presidency based on the continuation of White Supremecy. Eplore the un-biased history of the Presidents of the United Sates of America and pick your favorite!</p>
+                                    <button
+                                        className="save btn btn-primary"
+                                        onClick={this.playPres}
+                                        type="submit"
+                                        value="submit">Who's Your President
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="card p-4 m-4">
-                        <p>Explore the TRUE histories of the Presidents of the United States?</p>
-                        <p>
-                            <button
-                                className="save btn btn-info"
-                                onClick={this.playPres}
-                                type="submit"
-                                value="submit">who's your President
-                            </button>
-                        </p>
-                    </div>
+
                 </form>
             </div >
         )

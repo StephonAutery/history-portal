@@ -18,18 +18,18 @@ export default class Landing extends Component {
         return (
             <div className="container">
 
-                <div className="row">
+                <div className="row justify-content-center">
 
-                    <div className="col p-2 m-4">
+                    <div className="col-sm-9 p-2 m-4">
                         <h3><p>Welcome to History Portal!</p></h3>
                         <hr />
                     </div>
 
                 </div>
 
-                <div className="row">
+                <div className="row justify-content-center">
                     <div className="col-sm-4">
-                        <div className="card">
+                        <div className="card m-2">
                             <div className="card-body">
                                 <h4 className="card-title">History Portal is a Social Awareness Application.</h4>
                                 <hr />
@@ -39,7 +39,7 @@ export default class Landing extends Component {
                         </div>
                     </div>
                     <div className="col-sm-4">
-                        <div className="card">
+                        <div className="card m-2">
                             <div className="card-body">
                                 <h4 className="card-title">This is not a competition.</h4>
                                 <hr />

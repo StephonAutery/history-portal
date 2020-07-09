@@ -20,12 +20,6 @@ class App extends Component {
     redirectTo: null
   }
 
-  componentDidMount() {
-    console.log("----- props -")
-      console.log(this.props)
-    // this.getUser();
-  }
-
   getUser() {
     API.getUser({
       email: this.state.email
@@ -59,20 +53,25 @@ class App extends Component {
               path="/"
               render={() => {
                 return (
-                  (localStorage.getItem('loginData') ? < Redirect to="/play" /> : < Redirect to="/landing" />)
+                  (localStorage.getItem('loginData')
+                    ? < Redirect to={{
+                      pathname: "/play",
+                      state: { id: JSON.parse(localStorage.getItem('loginData')) }
+                    }} />
+                    : < Redirect to="/landing" />
+                  )
                 )
               }}
             />
-            <Route path="/questions" component={ Questions } />
-            <Route path="/login" component={ Login } />
-            <Route path="/logout" component={ Logout } />
-            <Route path="/mystats" component={ MyStats } />
-            {/* <Route path="/users" component={ Users } /> */}
-            <Route path="/signup" component={ Signup } />
-            <Route path="/landing" component={ Landing } />
-            <Route path="/sueQuestions" component={ sueQuestions } />
-            <Route path="/presidents" component={ Presidents } />
-            <Route path="/play" component={ Play } />
+            <Route path="/questions" component={Questions} />
+            <Route path="/login" component={Login} />
+            <Route path="/logout" component={Logout} />
+            <Route path="/mystats" component={MyStats} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/landing" component={Landing} />
+            <Route path="/sueQuestions" component={sueQuestions} />
+            <Route path="/presidents" component={Presidents} />
+            <Route path="/play" component={Play} />
           </Switch>
         </Router>
       </div >

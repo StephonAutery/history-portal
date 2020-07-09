@@ -12,7 +12,6 @@ export default class Login extends Component {
     }
 
     handleChange = event => {
-        // console.log(event.target.name + " | " + event.target.value);
         this.setState({
             [event.target.name]: event.target.value
         })
@@ -34,13 +33,11 @@ export default class Login extends Component {
                         localStorage.setItem('loginData', JSON.stringify({ userid: res.data.id._id }));
                         this.setState({
                             loggedIn: true,
-                            // userID: res.data.id._id,
                             userID: JSON.parse(localStorage.getItem('loginData')),
                             redirect: 'play'
                         });
                     });
                 }
-                // this.forceUpdate(this.setRedirect);
             }).catch(err => {
                 console.log("dang!");
                 console.log(err);
@@ -69,7 +66,6 @@ export default class Login extends Component {
                         <p>
                             <input
                                 type="text"
-                                // value={this.state.username}
                                 name="email"
                                 placeholder="enter email"
                                 autoComplete="email"

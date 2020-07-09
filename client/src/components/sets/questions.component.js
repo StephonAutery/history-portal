@@ -40,21 +40,16 @@ export default class Questions extends Component {
                     question: this.state.questions[this.state.questionNum],
                     userID: JSON.parse(localStorage.getItem('loginData'))
                 });
-                console.log(this.state.userID);        
+                console.log(this.state.userID);
                 API.getUserById(this.state.userID.userid)
-                .then(res => {
-                    this.setState({
-                        user: res.data.user
+                    .then(res => {
+                        this.setState({
+                            user: res.data.user
+                        });
+                        console.log("----- user -");
+                        console.log(this.state.user.name);
                     });
-                    console.log("----- user -");
-                    console.log(this.state.user.name);
-                });
             });
-        // API.LOC_API()
-        //     .then(res => {
-        //         // console.log(res.data.trending_content);
-        //         console.log(res.data.results);
-        //     })
     }
 
     onValueChange = event => {
@@ -110,121 +105,138 @@ export default class Questions extends Component {
         }
     }
 
-render() {
-    if (this.state.redirect) {
-        return <Redirect to={{
-            // sending data to mystats page
-            pathname: this.state.redirect,
-            state: {
-                id: this.state.userID.userid,
-                answers: this.state.answerResult,
-                numRight: this.state.numRight,
-                numWrong: this.state.numWrong,
-                pCorrecet: this.state.pCorrect,
-                pIncorrect: this.state.pIncorrect
-            }
-        }} />
-    }
-    return (
-        <Container>
-            <div className="container radio w-75">
-                <div className="card p-4 m-4">
-                    <h5>Question {this.state.questionNum}</h5>
-                    <hr />
-                    Current User: <h6>{this.state.user.name}</h6>
-                </div>
-                <div>
-                    <div className="card p-4 m-4">
-                        {this.state.question.question}
-                    </div>
-                    {!this.state.answered ?
-                        <div className="card p-4 m-4">
-                            <p>
-                                <label>
-                                    <input
-                                        type="radio"
-                                        value="a"
-                                        checked={this.state.selectedOption === "a"}
-                                        onChange={this.onValueChange}
-                                    />
-                                        &nbsp;&nbsp;{this.state.question.a}
-                                </label>
-                            </p>
-                            <p>
-                                <label>
-                                    <input
-                                        type="radio"
-                                        value="b"
-                                        checked={this.state.selectedOption === "b"}
-                                        onChange={this.onValueChange}
-                                    />
-                                        &nbsp;&nbsp;{this.state.question.b}
-                                </label>
-                            </p>
-                            <p>
-                                <label>
-                                    <input
-                                        type="radio"
-                                        value="c"
-                                        checked={this.state.selectedOption === "c"}
-                                        onChange={this.onValueChange}
-                                    />
-                                        &nbsp;&nbsp;{this.state.question.c}
-                                </label>
-                            </p>
-                        </div> : ""}
-                    {/* <p>
-                                {this.state.selected !== "c" && this.state.answered ? "" :
-                                    <label>
-                                        <input
-                                            type="radio"
-                                            value="c"
-                                            checked={this.state.selectedOption === "c"}
-                                            onChange={this.onValueChange}
-                                        />
-                                        &nbsp;&nbsp;{this.state.question.c}<br />
-                                    </label>}
-                            </p> */}
-                    {/* <p>
-                                <button
-                                    onClick={() => this.qAnswered()}
-                                    className="save btn btn-info"
-                                    type="submit">answer
-                                </button>
-                            </p> */}
+    render() {
+        if (this.state.redirect) {
+            return <Redirect to={{
+                // sending data to mystats page
+                pathname: this.state.redirect,
+                state: {
+                    id: this.state.userID.userid,
+                    answers: this.state.answerResult,
+                    numRight: this.state.numRight,
+                    numWrong: this.state.numWrong,
+                    pCorrecet: this.state.pCorrect,
+                    pIncorrect: this.state.pIncorrect
+                }
+            }} />
+        }
+        return (
+            <Container>
+                <div className="container radio w-75">
 
-                    <div className="card p-4 m-4">
-                        <p>
-                            {!this.state.answered ?
-                                <button
-                                    onClick={() => this.qAnswered()}
-                                    className="save btn btn-info"
-                                    type="submit">answer
+                    <div className="row">
+                        <div className="col-sm-6">
+                            <div className="card m-1">
+                                <div className="card-body">
+                                    <h5 className="card-title">Question {this.state.questionNum}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-sm-6">
+                            <div className="card m-1">
+                                <div className="card-body">
+                                    <h5 className="card-title">{this.state.user.name}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div className="row">
+
+
+                        <div className="col-sm-12">
+                            <div className="card m-1">
+                                <div className="card-body">
+                                    <p className="card-text">{this.state.question.question}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row">
+                            {!this.state.answered
+                                ?
+                                <div className="card m-1">
+                                    <div className="card-body">
+                                        <p>
+                                            <label>
+                                                <input
+                                                    type="radio"
+                                                    value="a"
+                                                    checked={this.state.selectedOption === "a"}
+                                                    onChange={this.onValueChange}
+                                                />
+                                        &nbsp;&nbsp;{this.state.question.a}
+                                            </label>
+                                        </p>
+
+                                        <p>
+                                            <label>
+                                                <input
+                                                    type="radio"
+                                                    value="b"
+                                                    checked={this.state.selectedOption === "b"}
+                                                    onChange={this.onValueChange}
+                                                />
+                                        &nbsp;&nbsp;{this.state.question.b}
+                                            </label>
+                                        </p>
+
+                                        <p>
+                                            <label>
+                                                <input
+                                                    type="radio"
+                                                    value="c"
+                                                    checked={this.state.selectedOption === "c"}
+                                                    onChange={this.onValueChange}
+                                                />
+                                        &nbsp;&nbsp;{this.state.question.c}
+                                            </label>
+                                        </p>
+                                    </div>
+                                </div>
+                                :
+                                ""}
+                        </div>
+
+                        <div className="row">
+                            <div className="card p-4 m-4">
+                                <div className="card-body">
+                                    <p>
+                                        {!this.state.answered ?
+                                            <button
+                                                onClick={() => this.qAnswered()}
+                                                className="save btn btn-info"
+                                                type="submit">answer
                                     </button>
-                                : ""}
-                        </p>
-                        {this.state.answered ?
-                            <QInfo
-                                response={this.state.selectedOption}
-                                answer={this.state.question.answer}
-                                ID={this.state.question._id}
-                                info={this.state.question.info}
-                                thisQ_links={this.state.question.links}
-                            />
-                            : ""}
-                        <p>
-                            {this.state.answered ?
-                                <button
-                                    onClick={() => this.handleFormSubmit()}
-                                    className="save btn btn-danger"
-                                    type="submit">next question
-                                    </button>
-                                : ""}
-                        </p>
+                                            : ""}
+                                    </p>
+                                    {this.state.answered ?
+                                        <QInfo
+                                            response={this.state.selectedOption}
+                                            answer={this.state.question.answer}
+                                            ID={this.state.question._id}
+                                            info={this.state.question.info}
+                                            thisQ_links={this.state.question.links}
+                                        />
+                                        : ""}
+                                    <p>
+                                        {this.state.answered ?
+                                            <button
+                                                onClick={() => this.handleFormSubmit()}
+                                                className="save btn btn-danger"
+                                                type="submit">next question
+                                        </button>
+                                            : ""}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-            </div>
-        </Container>
-    )
-}
+            </Container>
+        )
+    }
 }
