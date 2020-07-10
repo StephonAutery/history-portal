@@ -3,6 +3,7 @@ import API from '../../utils/API';
 import Container from "../container.component";
 import QInfo from "../info/qInfo.component";
 import { Redirect } from "react-router-dom";
+import Navbar from "../layout/navbar.component";
 
 export default class Questions extends Component {
     state = {
@@ -39,21 +40,14 @@ export default class Questions extends Component {
                     questionNum: 1,
                     question: this.state.questions[this.state.questionNum],
                     userID: JSON.parse(localStorage.getItem('loginData'))
-                }); console.log(this.state.userID);
+                });
                 API.getUserById(this.state.userID.userid)
                     .then(res => {
                         this.setState({
                             user: res.data.user
                         });
-                        console.log("----- user -");
-                        console.log(this.state.user.name);
                     });
             });
-        // API.LOC_API()
-        //     .then(res => {
-        //         // console.log(res.data.trending_content);
-        //         console.log(res.data.results);
-        //     })
     }
 
     onValueChange = event => {
@@ -126,13 +120,13 @@ export default class Questions extends Component {
         }
         return (
             <Container>
-                <div className="container radio w-75">
+                <Navbar />
+                <div className="container w-75">
                     <div className="card p-4 m-4">
                         <h4>Question {this.state.questionNum}</h4>
-                        <hr />
-                    Current User: <h6>{this.state.user.name}</h6>
                     </div>
                     <div>
+                        
                         <div className="card p-4 m-4">
                             {this.state.question.question}
                         </div>

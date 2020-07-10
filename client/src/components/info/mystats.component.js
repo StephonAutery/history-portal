@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import API from '../utils/API';
-import Container from "./container.component";
+import API from '../../utils/API';
+import Container from "../container.component";
+import Navbar from "../layout/navbar.component";
 
 export default class Users extends Component {
     state = {
@@ -66,23 +67,11 @@ export default class Users extends Component {
     render() {
         return (
             < Container >
+                <Navbar />
                 <div className="container w-75">
-                    <hr />
-
                     <div className="row">
-                        <div className="col-sm-6">
-                            <div className="card m-1">
-                                <div className="card-body">
-                                    <h5 className="card-title">Your Statistics</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-sm-6">
-                            <div className="card m-1">
-                                <div className="card-body">
-                                    <h5 className="card-title">{this.state.user.name}</h5>
-                                </div>
-                            </div>
+                        <div className="pl-4">
+                            <h5 className="card-title">Your Statistics</h5>
                         </div>
                     </div>
 

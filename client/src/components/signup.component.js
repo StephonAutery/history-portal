@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
+import Container from "./container.component";
+import Navbar from "./layout/navbar.component";
 import API from "../utils/API";
 // import Select from 'react-select';
 
@@ -63,39 +65,41 @@ export default class NewQuestions extends Component {
             }} />
         }
         return (
-            <div className="container p-2 w-50">
-                <h3><p>hello new user</p></h3>
-                <hr />
-                <form onSubmit={this.handleFormSubmit}>
-                    <label htmlFor="name">
-                        &nbsp;&nbsp;name:
+            <Container>
+                <Navbar />
+                <div className="container p-2 w-50">
+                    <h3><p>hello new user</p></h3>
+                    <hr />
+                    <form onSubmit={this.handleFormSubmit}>
+                        <label htmlFor="name">
+                            &nbsp;&nbsp;name:
                         <p>
-                            <input
-                                type="text"
-                                value={this.state.name}
-                                name="name"
-                                placeholder="full name"
-                                autoComplete="name"
-                                onChange={this.handleChange}
-                            />
-                        </p>
-                    </label>
-                    <br />
-                    <label htmlFor="email">
-                        &nbsp;&nbsp;email:
+                                <input
+                                    type="text"
+                                    value={this.state.name}
+                                    name="name"
+                                    placeholder="full name"
+                                    autoComplete="name"
+                                    onChange={this.handleChange}
+                                />
+                            </p>
+                        </label>
+                        <br />
+                        <label htmlFor="email">
+                            &nbsp;&nbsp;email:
                         <p>
-                            <input
-                                type="text"
-                                value={this.state.username}
-                                name="email"
-                                placeholder="email address"
-                                autoComplete="email"
-                                onChange={this.handleChange}
-                            />
-                        </p>
-                    </label>
-                    <br />
-                    {/* <label htmlFor="race">&nbsp;&nbsp;race:</label>
+                                <input
+                                    type="text"
+                                    value={this.state.username}
+                                    name="email"
+                                    placeholder="email address"
+                                    autoComplete="email"
+                                    onChange={this.handleChange}
+                                />
+                            </p>
+                        </label>
+                        <br />
+                        {/* <label htmlFor="race">&nbsp;&nbsp;race:</label>
                         <p>
                             <select value={ this.state.race } name="race" id="race" placeholder="race">
                             <option value="White">White American</option>
@@ -112,44 +116,45 @@ export default class NewQuestions extends Component {
                             </select>
                         </p>
                     <br /> */}
-                    <label htmlFor="password">
-                        &nbsp;&nbsp;password:
+                        <label htmlFor="password">
+                            &nbsp;&nbsp;password:
                         <p>
-                            <input
-                                type="password"
-                                value={this.state.password}
-                                name="password"
-                                placeholder="password"
-                                autoComplete="password"
-                                onChange={this.handleChange}
-                            />
-                        </p>
-                    </label>
-                    <br />
-                    <label htmlFor="password2">
-                        &nbsp;&nbsp;re-enter password:
+                                <input
+                                    type="password"
+                                    value={this.state.password}
+                                    name="password"
+                                    placeholder="password"
+                                    autoComplete="password"
+                                    onChange={this.handleChange}
+                                />
+                            </p>
+                        </label>
+                        <br />
+                        <label htmlFor="password2">
+                            &nbsp;&nbsp;re-enter password:
                         <p>
-                            <input
-                                type="password"
-                                value={this.state.password2}
-                                name="password2"
-                                placeholder="password2"
-                                autoComplete="password2"
-                                onChange={this.handleChange}
-                            />
+                                <input
+                                    type="password"
+                                    value={this.state.password2}
+                                    name="password2"
+                                    placeholder="password2"
+                                    autoComplete="password2"
+                                    onChange={this.handleChange}
+                                />
+                            </p>
+                        </label>
+                        <hr />
+                        <p>
+                            <button
+                                className="save btn btn-primary"
+                                onClick={this.handleSubmit}
+                                type="submit"
+                                value="submit"
+                            >sign up</button>
                         </p>
-                    </label>
-                    <hr />
-                    <p>
-                        <button
-                            className="save btn btn-primary"
-                            onClick={this.handleSubmit}
-                            type="submit"
-                            value="submit"
-                        >sign up</button>
-                    </p>
-                </form>
-            </div>
+                    </form>
+                </div>
+            </Container>
         )
     }
 }

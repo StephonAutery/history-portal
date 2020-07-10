@@ -3,6 +3,7 @@ import API from '../../utils/API';
 import Container from "./../container.component";
 import QInfo from "../info/qInfo.component";
 import { Redirect } from "react-router-dom";
+import Navbar from "../layout/navbar.component";
 
 export default class Questions extends Component {
     state = {
@@ -122,30 +123,20 @@ export default class Questions extends Component {
         }
         return (
             <Container>
+                <Navbar />
                 <div className="container radio w-75">
 
                     <div className="row">
                         <div className="col-sm-6">
-                            <div className="card m-1">
-                                <div className="card-body">
-                                    <h5 className="card-title">Question {this.state.questionNum}</h5>
+                                <div className="pl-4 mt-2">
+                                    <h5>Question {this.state.questionNum}</h5>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="col-sm-6">
-                            <div className="card m-1">
-                                <div className="card-body">
-                                    <h5 className="card-title">{this.state.user.name}</h5>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
 
 
                     <div className="row">
-
-
                         <div className="col-sm-12">
                             <div className="card m-1">
                                 <div className="card-body">
@@ -153,57 +144,67 @@ export default class Questions extends Component {
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div className="row">
+                    <div className="row">
+                        <div className="col-sm-12">
                             {!this.state.answered
                                 ?
                                 <div className="card m-1">
                                     <div className="card-body">
-                                        <p>
+
+                                        <div className="card-text">
                                             <label>
-                                                <input
+                                                a.&nbsp;&nbsp;
+                                            <input
                                                     type="radio"
                                                     value="a"
                                                     checked={this.state.selectedOption === "a"}
                                                     onChange={this.onValueChange}
                                                 />
-                                        &nbsp;&nbsp;{this.state.question.a}
+                                                &nbsp;&nbsp;{this.state.question.a}
                                             </label>
-                                        </p>
+                                        </div>
 
-                                        <p>
+                                        <div className="card-text">
                                             <label>
+                                                b.&nbsp;&nbsp;
                                                 <input
                                                     type="radio"
                                                     value="b"
                                                     checked={this.state.selectedOption === "b"}
                                                     onChange={this.onValueChange}
                                                 />
-                                        &nbsp;&nbsp;{this.state.question.b}
+                                                &nbsp;&nbsp;{this.state.question.b}
                                             </label>
-                                        </p>
+                                        </div>
 
-                                        <p>
+                                        <div className="card-text">
                                             <label>
+                                                c.&nbsp;&nbsp;
                                                 <input
                                                     type="radio"
                                                     value="c"
                                                     checked={this.state.selectedOption === "c"}
                                                     onChange={this.onValueChange}
                                                 />
-                                        &nbsp;&nbsp;{this.state.question.c}
+                                                &nbsp;&nbsp;{this.state.question.c}
                                             </label>
-                                        </p>
+
+                                        </div>
                                     </div>
                                 </div>
                                 :
                                 ""}
                         </div>
+                    </div>
 
-                        <div className="row">
-                            <div className="card p-4 m-4">
+                    <div className="row">
+                        <div className="col-sm-12">
+                            <div className="card m-1">
                                 <div className="card-body">
-                                    <p>
+
+                                    <div className="card-text">
                                         {!this.state.answered ?
                                             <button
                                                 onClick={() => this.qAnswered()}
@@ -211,30 +212,33 @@ export default class Questions extends Component {
                                                 type="submit">answer
                                     </button>
                                             : ""}
-                                    </p>
-                                    {this.state.answered ?
-                                        <QInfo
-                                            response={this.state.selectedOption}
-                                            answer={this.state.question.answer}
-                                            ID={this.state.question._id}
-                                            info={this.state.question.info}
-                                            thisQ_links={this.state.question.links}
-                                        />
-                                        : ""}
-                                    <p>
+                                        {this.state.answered ?
+                                            <QInfo
+                                                response={this.state.selectedOption}
+                                                answer={this.state.question.answer}
+                                                ID={this.state.question._id}
+                                                info={this.state.question.info}
+                                                thisQ_links={this.state.question.links}
+                                            />
+                                            : ""}
+                                    </div>
+
+                                    <div className="card-text">
                                         {this.state.answered ?
                                             <button
                                                 onClick={() => this.handleFormSubmit()}
                                                 className="save btn btn-danger"
                                                 type="submit">next question
-                                        </button>
+                                            </button>
                                             : ""}
-                                    </p>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
-
                     </div>
+
+
                 </div>
             </Container>
         )

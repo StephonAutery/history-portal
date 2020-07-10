@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
+import Container from "./container.component";
+import Navbar from "./layout/navbar.component";
 import API from "../utils/API";
 
 export default class Login extends Component {
@@ -24,6 +26,7 @@ export default class Login extends Component {
             password: this.state.password
         })
             .then(res => {
+                console.log(res);
                 if (res.status === 200) {
                     API.getUserId({
                         email: this.state.email
@@ -55,49 +58,52 @@ export default class Login extends Component {
             }} />
         }
         return (
-            <div className="container p-2 w-50">
-                <h4><p>welcome to History Portal, please login</p></h4>
-                <h5><p>or</p></h5>
-                <h6><p><a className="nav-link" href="/signup">sign up</a></p></h6>
-                <hr />
-                <form>
-                    <label htmlFor="email">
-                        &nbsp;&nbsp;email:
-                        <p>
-                            <input
-                                type="text"
-                                name="email"
-                                placeholder="enter email"
-                                autoComplete="email"
-                                onChange={this.handleChange}
-                            />
-                        </p>
-                    </label>
-                    <br />
-                    <label htmlFor="password">
-                        &nbsp;&nbsp;password:
-                        <p>
-                            <input
-                                type="password"
-                                name="password"
-                                placeholder="password"
-                                autoComplete="current-password"
-                                onChange={this.handleChange}
-                            />
-                        </p>
-                    </label>
+            <Container>
+                <Navbar />
+                <div className="container p-2 w-50">
+                    <h4><p>welcome to History Portal, please login</p></h4>
+                    <h5><p>or</p></h5>
+                    <h6><p><a className="nav-link" href="/signup">sign up</a></p></h6>
                     <hr />
-                    <p>
-                        <button
-                            className="save btn btn-danger"
-                            onClick={this.handleFormSubmit}
-                            type="submit"
-                            value="submit">login
+                    <form>
+                        <label htmlFor="email">
+                            &nbsp;&nbsp;email:
+                        <p>
+                                <input
+                                    type="text"
+                                    name="email"
+                                    placeholder="enter email"
+                                    autoComplete="email"
+                                    onChange={this.handleChange}
+                                />
+                            </p>
+                        </label>
+                        <br />
+                        <label htmlFor="password">
+                            &nbsp;&nbsp;password:
+                        <p>
+                                <input
+                                    type="password"
+                                    name="password"
+                                    placeholder="password"
+                                    autoComplete="current-password"
+                                    onChange={this.handleChange}
+                                />
+                            </p>
+                        </label>
+                        <hr />
+                        <p>
+                            <button
+                                className="save btn btn-danger"
+                                onClick={this.handleFormSubmit}
+                                type="submit"
+                                value="submit">login
                         </button>
-                    </p>
+                        </p>
 
-                </form>
-            </div>
+                    </form>
+                </div>
+            </Container>
         )
     }
 }

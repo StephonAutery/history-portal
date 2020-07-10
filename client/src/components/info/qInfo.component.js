@@ -3,11 +3,12 @@ import React from "react";
 function QInfo(props) {
     console.log(props)
     return (
-        <div>
+        <div className="card-text">
             <p>You answered: {props.response}</p>
             <p>Correct answer: {props.answer}</p>
             <hr />
             <p>{props.info}</p>
+        <hr />
         </div>
     );
 }
