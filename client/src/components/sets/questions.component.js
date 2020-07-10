@@ -127,18 +127,9 @@ export default class Questions extends Component {
                 <div className="container radio w-75">
 
                     <div className="row">
-                        <div className="col-sm-6">
-                                <div className="pl-4 mt-2">
-                                    <h5>Question {this.state.questionNum}</h5>
-                                </div>
-                        </div>
-                    </div>
-
-
-
-                    <div className="row">
                         <div className="col-sm-12">
-                            <div className="card m-1">
+                            <div className="card bg-light m-1 mt-4">
+                            <h5 className="card-header">Question {this.state.questionNum}</h5>
                                 <div className="card-body">
                                     <p className="card-text">{this.state.question.question}</p>
                                 </div>
@@ -150,7 +141,7 @@ export default class Questions extends Component {
                         <div className="col-sm-12">
                             {!this.state.answered
                                 ?
-                                <div className="card m-1">
+                                <div className="card bg-light m-1">
                                     <div className="card-body">
 
                                         <div className="card-text">
@@ -201,7 +192,7 @@ export default class Questions extends Component {
 
                     <div className="row">
                         <div className="col-sm-12">
-                            <div className="card m-1">
+                            <div className="card bg-light m-1">
                                 <div className="card-body">
 
                                     <div className="card-text">

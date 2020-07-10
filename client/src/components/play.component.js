@@ -79,8 +79,8 @@ export default class Landing extends Component {
                         <div className="row">
                             <div className="col-sm-6">
                                 <div className="card m-1">
+                                    <h5 className="card-header">Stephon Autery</h5>
                                     <div className="card-body">
-                                        <h5 className="card-title">Stephon Autery</h5>
                                         <p className="card-text">Stephon Autery identifies as a Black, cis gendered Male. He served 8 years in the United States Marine Corps, worked the last 14 years as a Stay at Home Dad and is now pursuing work as a Full Stack Developer after completeing the UC Berkeley Extension's Full Stack Developer Coding Boot Camp in June of 2020.</p>
                                         <button
                                             className="save btn btn-primary"
@@ -93,8 +93,8 @@ export default class Landing extends Component {
                             </div>
                             <div className="col-sm-6">
                                 <div className="card m-1">
+                                    <h5 className="card-header">Susannah Levy</h5>
                                     <div className="card-body">
-                                        <h5 className="card-title">Susannah Levy</h5>
                                         <p className="card-text">Susannah Levy identifies as a White, cis gendered Female. She has served as an OBGyn/Obstetrics Nurse at <a href="https://zuckerbergsanfranciscogeneral.org/about-us/" target="_blank" rel="noopener noreferrer">UCSF General Hospital</a> for the last 23 years and is the Mother of 2 adult children.
                                     </p>
                                         <button
@@ -111,8 +111,8 @@ export default class Landing extends Component {
                         <div className="row">
                             <div className="col-sm-6">
                                 <div className="card m-1">
+                                    <h5 className="card-header">Who's Your President</h5>
                                     <div className="card-body">
-                                        <h5 className="card-title">Who's Your President</h5>
                                         <p className="card-text">Explore the un-filtered histories of the Presidents of the United States.</p>
                                         <p className="card-text">Even today, text books in US Schools vary wildly from one school district to the next and the only thing they have in common is a biased editing of the history of the American Presidency based on the continuation of White Supremecy. Eplore the un-biased history of the Presidents of the United Sates of America and pick your favorite!</p>
                                         <button

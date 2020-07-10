@@ -69,7 +69,7 @@ export default class Questions extends Component {
                     </div>
 
                     <div className="row">
-                        <div col-sm-3>
+                        <div className="col">
                             {this.state.presidents.map((pres, index) => (
                                 < div key={index} className="card  m-1">
                                     <div key={pres._id} className="card-body">

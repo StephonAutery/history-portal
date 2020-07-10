@@ -70,7 +70,7 @@ export default class Users extends Component {
                 <Navbar />
                 <div className="container w-75">
                     <div className="row">
-                        <div className="pl-4">
+                        <div className="pl-4 mt-2">
                             <h5 className="card-title">Your Statistics</h5>
                         </div>
                     </div>
@@ -78,18 +78,16 @@ export default class Users extends Component {
                     <div className="row">
                         <div className="col-sm-6">
                             <div className="card border-success m-1">
+                                    <h5 className="card-header">Number Correct</h5>
                                 <div className="card-body text-success">
-                                    <h5 className="card-title">Number Correct</h5>
-                                    <hr />
                                     <p className="card-text">{this.props.location.state.numRight}</p>
                                 </div>
                             </div>
                         </div>
                         <div className="col-sm-6">
                             <div className="card border-success m-1">
+                                    <h5 className="card-header">Percentage Correct</h5>
                                 <div className="card-body text-success">
-                                    <h5 className="card-title">Percentage Correct</h5>
-                                    <hr />
                                     <p className="card-text">{this.state.percentageCorrect}</p>
                                 </div>
                             </div>
@@ -99,18 +97,16 @@ export default class Users extends Component {
                     <div className="row">
                         <div className="col-sm-6">
                             <div className="card border-danger m-1">
+                                    <h5 className="card-header">Number Incorrect</h5>
                                 <div className="card-body text-danger">
-                                    <h5 className="card-title">Number Incorrect</h5>
-                                    <hr />
                                     <p className="card-text">{this.props.location.state.numWrong}</p>
                                 </div>
                             </div>
                         </div>
                         <div className="col-sm-6">
                             <div className="card border-danger m-1">
+                                    <h5 className="card-header">Percentage Incorrect</h5>
                                 <div className="card-body text-danger">
-                                    <h5 className="card-title">Percentage Incorrect</h5>
-                                    <hr />
                                     <p className="card-text">{this.state.percentageIncorrect}</p>
                                 </div>
                             </div>
