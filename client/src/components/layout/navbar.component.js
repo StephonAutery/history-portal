@@ -23,10 +23,7 @@ export default class Navbar extends Component {
         }
     }
 
-
-
     render() {
-        console.log(this.state.user.name);
         return (
             <div className="container w-75">
 

@@ -41,6 +41,16 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
+const fs = require('fs');
+
+async function print(path) {
+  const dir = await fs.promises.opendir(path);
+  for await (const dirent of dir) {
+    console.log(dirent.name);
+  }
+}
+print('./').catch(console.error);
+
 // routes
 // app.use("/api/users", users);
 app.use(routes);
