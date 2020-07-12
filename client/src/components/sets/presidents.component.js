@@ -78,8 +78,8 @@ export default class Questions extends Component {
                                             <h4>{pres.number}</h4>
                                                 birth year: {pres.birth_year}  <br />
                                                 took office: {pres.took_office}<br />
-                                                left office: {Date(pres.left_office)}<br />
-                                                death year: {Date(pres.death_year)}<br />
+                                                left office: {pres.left_office}<br />
+                                                death year: {pres.death_year}<br />
                                                 party: {pres.party}
                                             <hr />
                                             <p>

@@ -8,7 +8,7 @@ const questionSchema = new Schema({
     c: { type: String, required: true },
     answer: { type: String, required: true },
     info: { type: String },
-    links: { type: String}
+    links: { type: Object}
 }, { 
     timestamps: true 
 });

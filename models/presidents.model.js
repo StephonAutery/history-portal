@@ -12,19 +12,19 @@ const presidentSchema = new Schema({
         required: true
     },
     birth_year: {
-        type: Date,
+        type: String,
         required: true
     },
     death_year: {
-        type: Date, 
+        type: String, 
         required: true
     },
     took_office: {
-        type: Date,
+        type: String,
         required: true
     },
     left_office: {
-        type: Date,
+        type: String,
         required: true
     },
     party: {

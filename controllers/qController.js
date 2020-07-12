@@ -23,16 +23,19 @@ module.exports = {
           .catch(err => res.status(422).json(err));
     }
   },
+
   findById: function (req, res) {
     db.Question.findById(req.params.id)
       .then(dbQuestion => res.json(dbQuestion))
       .catch(err => res.status(422).json(err));
   },
+
   create: function (req, res) {
     db.Question.create(req.body)
       .then(dbQuestion => res.json(dbQuestion))
       .catch(err => res.status(422).json(err));
   },
+
   remove: function (req, res) {
     db.Question.findById({ _id: req.params.id })
       .then(dbQuestion => dbQuestion.remove())

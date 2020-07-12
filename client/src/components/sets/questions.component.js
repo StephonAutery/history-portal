@@ -31,6 +31,7 @@ export default class Questions extends Component {
     componentDidMount() {
         API.getQuestions()
             .then(res => {
+                console.log(res.data);
                 this.setState({
                     questions: res.data
                 });
@@ -209,7 +210,7 @@ export default class Questions extends Component {
                                                 answer={this.state.question.answer}
                                                 ID={this.state.question._id}
                                                 info={this.state.question.info}
-                                                thisQ_links={this.state.question.links}
+                                                links={this.state.question.links}
                                             />
                                             : ""}
                                     </div>

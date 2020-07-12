@@ -44,12 +44,15 @@ if (process.env.NODE_ENV === "production") {
 const fs = require('fs');
 
 async function print(path) {
+    console.log("----- path -");
+    console.log(path);
+    console.log("----- path -");
   const dir = await fs.promises.opendir(path);
   for await (const dirent of dir) {
     console.log(dirent.name);
   }
 }
-print('./').catch(console.error);
+print('./client/public/images/pres').catch(console.error);
 
 // routes
 // app.use("/api/users", users);
