@@ -74,7 +74,7 @@ export default class Questions extends Component {
                                 < div key={index} className="card  m-1">
                                     <div key={pres._id} className="card-body">
                                         <div className="card-text">
-                                            <h4>{pres.president}</h4><hr></hr>
+                                            <h4>{pres.president} - {index}</h4><hr></hr>
                                             <h4>{pres.number}</h4>
                                                 birth year: {pres.birth_year}  <br />
                                                 took office: {pres.took_office}<br />
@@ -82,11 +82,11 @@ export default class Questions extends Component {
                                                 death year: {pres.death_year}<br />
                                                 party: {pres.party}
                                             <hr />
-                                            <p>
+                                            {/* <p>
                                                 <a href="/play" className="btn btn-info">return to portal</a>
-                                            </p>
+                                            </p> */}
                                             <p>
-                                                <a href="/play" data={pres._id} className="btn btn-info">my president</a>
+                                                <a href="/play" data={pres._id} className="btn btn-info">find out more{pres._id}</a>
                                             </p>
                                         </div>
                                     </div>

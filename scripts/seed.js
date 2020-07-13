@@ -11,11 +11,11 @@ mongoose.connect(
 const sueSeed = [
     {
     question: "President Eisenhower is most known for which event in the civil rights movement?",
-    a: "granting permission for the March on Washington",
-    b: "urging the Brooklyn Dodgers to sign Jackie Robinson",
-    c: "using federal troops to integrate schools in Little Rock",
+    a: "Granting permission for the March on Washington",
+    b: "Urging the Brooklyn Dodgers to sign Jackie Robinson",
+    c: "Using federal troops to integrate schools in Little Rock",
     answer: "c",
-    info: "",
+    info: "On May 17, 1954, the U.S. Supreme Court ruled in Brown vs. Topeka Board of Education that segregated schools are \"inherently unequal.\" In September 1957, as a result of that ruling, nine African-American students enrolled at Central High School in Little Rock, Arkansas. The ensuing struggle between segregationists and integrationists, the State of Arkansas and the federal government, President Dwight D. Eisenhower and Arkansas Governor Orval Faubus, has become known in modern American history as the \"Little Rock Crisis.\" The crisis gained world-wide attention. When Governor Faubus ordered the Arkansas National Guard to surround Central High School to keep the nine students from entering the school, President Eisenhower ordered the 101st Airborne Division into Little Rock to insure the safety of the \"Little Rock Nine\" and that the rulings of the Supreme Court were upheld.",
     links: [
         { link: "https://www.zinnedproject.org/materials/a-school-year-like-no-other/" },
         { link: "https://www.eisenhowerlibrary.gov/research/online-documents/civil-rights-little-rock-school-integration-crisis" }
@@ -71,9 +71,9 @@ const sueSeed = [
 },
 {
     question: "Which was the policy of the Federal Government in the late 1880s as exemplified by the Dawes Act?",
-    a: "granting full citizenship rights to Native Americans",
-    b: "moving Native Americans to cities to supply labor",
-    c: "breaking up tribal lands compelling Native Americans to abandon their cultural traditions and assimilate",
+    a: "Granting full citizenship rights to Native Americans",
+    b: "Moving Native Americans to cities to supply labor",
+    c: "Breaking up tribal lands compelling Native Americans to abandon their cultural traditions and assimilate",
     answer: "c",
     info: "",
     links: [
@@ -82,10 +82,10 @@ const sueSeed = [
     ]
 },
 {
-    question: "which of the following groups DID receive labor protections such as social security benefits under the New Deal ?",
-    a: "educational workers",
-    b: "agricultural workers.",
-    c: "industrial workers",
+    question: "Which of the following groups DID receive labor protections such as social security benefits under the New Deal ?",
+    a: "Educational workers",
+    b: "Agricultural workers.",
+    c: "Industrial workers",
     answer: "c",
     info: "",
     links: [
@@ -94,10 +94,10 @@ const sueSeed = [
     ]
 },
 {
-    question: "which of the following is true about Fred Korematsu ?",
-    a: "he was a U.S.Citizen",
-    b: "he refused to evacuate San Leandro, CA and be moved to a Japanese internment camp",
-    c: "he lost his challenge in 1944 when the Supreme Court ruled that civil liberties could be denied on the basis of race / national origin",
+    question: "Which of the following is true about Fred Korematsu ?",
+    a: "He was a U.S.Citizen",
+    b: "He refused to evacuate San Leandro, CA and be moved to a Japanese internment camp",
+    c: "He lost his challenge in 1944 when the Supreme Court ruled that civil liberties could be denied on the basis of race / national origin",
     answer: "all",
     info: "",
     links: [
@@ -106,7 +106,7 @@ const sueSeed = [
     ]
 },
 {
-    question: "what is the name of the FBI’s counterintelligence program in the 1960’s / 70’s targeting activists such as the Black freedom movement ?",
+    question: "What is the name of the FBI’s counterintelligence program in the 1960’s / 70’s targeting activists such as the Black freedom movement ?",
     a: "ACLU",
     b: "COINTELPRO",
     c: "ANC",
@@ -118,7 +118,7 @@ const sueSeed = [
     ]
 },
 {
-    question: "which American revolutionary thinker published African Slavery in America, indicting the colonists’ advocacy for their own freedom while supporting slavery ?",
+    question: "Which American revolutionary thinker published African Slavery in America, indicting the colonists’ advocacy for their own freedom while supporting slavery ?",
     a: "Thomas Paine",
     b: "Thomas Jefferson", 
     c: "Alexander Hamilton",
@@ -131,9 +131,9 @@ const sueSeed = [
 },
 {
     question: "May 1, International Workers Day, began as a commemoration of which event ?",
-    a: "the 1866 Memphis Massacre.",
-    b: "the 1970 Kent State Massacre.",
-    c: "the 1886 Haymarket Tragedy",
+    a: "The 1866 Memphis Massacre.",
+    b: "The 1970 Kent State Massacre.",
+    c: "The 1886 Haymarket Tragedy",
     answer: "c",
     info: "",
     links: [

@@ -10,7 +10,7 @@ mongoose.connect(
 // create the data objects
 const presidentSeed = [
 	{
-		"number": 1,
+		"number": 01,
 		"president": "George Washington",
 		"birth_year": 1732,
 		"death_year": 1799,
@@ -19,7 +19,7 @@ const presidentSeed = [
 		"party": "No Party"
 	},
 	{
-		"number": 2,
+		"number": 02,
 		"president": "John Adams",
 		"birth_year": 1735,
 		"death_year": 1826,
@@ -28,7 +28,7 @@ const presidentSeed = [
 		"party": "Federalist"
 	},
 	{
-		"number": 3,
+		"number": 03,
 		"president": "Thomas Jefferson",
 		"birth_year": 1743,
 		"death_year": 1826,
@@ -37,7 +37,7 @@ const presidentSeed = [
 		"party": "Democratic-Republican"
 	},
 	{
-		"number": 4, "president": "James Madison",
+		"number": 04, "president": "James Madison",
 		"birth_year": 1751,
 		"death_year": 1836,
 		"took_office": "1809-03-04",
@@ -45,7 +45,7 @@ const presidentSeed = [
 		"party": "Democratic-Republican"
 	},
 	{
-		"number": 5, "president": "James Monroe",
+		"number": 05, "president": "James Monroe",
 		"birth_year": 1758,
 		"death_year": 1831,
 		"took_office": "1817-03-04",
@@ -53,7 +53,7 @@ const presidentSeed = [
 		"party": "Democratic-Republican"
 	},
 	{
-		"number": 6, "president": "John Quincy Adams",
+		"number": 06, "president": "John Quincy Adams",
 		"birth_year": 1767,
 		"death_year": 1848,
 		"took_office": "1825-03-04",
@@ -61,7 +61,7 @@ const presidentSeed = [
 		"party": "Democratic-Republican"
 	},
 	{
-		"number": 7,
+		"number": 07,
 		"president": "Andrew Jackson",
 		"birth_year": 1767,
 		"death_year": 1845,
@@ -70,7 +70,7 @@ const presidentSeed = [
 		"party": "Democratic"
 	},
 	{
-		"number": 8,
+		"number": 08,
 		"president": "Martin Van Buren",
 		"birth_year": 1782,
 		"death_year": 1862,
@@ -78,7 +78,7 @@ const presidentSeed = [
 		"left_office": "1841-03-04",
 		"party": "Democratic"
 	},
-	{ "number": 9, "president": "William Henry Harrison", "birth_year": 1773, "death_year": 1841, "took_office": "1841-03-04", "left_office": "1841-04-04", "party": "Whig" },
+	{ "number": 09, "president": "William Henry Harrison", "birth_year": 1773, "death_year": 1841, "took_office": "1841-03-04", "left_office": "1841-04-04", "party": "Whig" },
 	{ "number": 10, "president": "John Tyler", "birth_year": 1790, "death_year": 1862, "took_office": "1841-04-04", "left_office": "1845-03-04", "party": "Whig" },
 	{ "number": 11, "president": "James K. Polk", "birth_year": 1795, "death_year": 1849, "took_office": "1845-03-04", "left_office": "1849-03-04", "party": "Democratic" },
 	{ "number": 12, "president": "Zachary Taylor", "birth_year": 1784, "death_year": 1850, "took_office": "1849-03-04", "left_office": "1850-07-09", "party": "Whig" },

@@ -114,7 +114,7 @@ export default class Landing extends Component {
                                     <h5 className="card-header">Who's Your President</h5>
                                     <div className="card-body">
                                         <p className="card-text">Explore the unfiltered histories of the Presidents of the United States.</p>
-                                        <p className="card-text">Even today, text books in US schools vary wildly from one school district to the next and one thing they have in common is a biased editing of the history of the American Presidency based on the continuation of White Supremecy. Eplore the unbiased history of the Presidents of the United Sates of America and pick your favorite!</p>
+                                        <p className="card-text">Even today, text books in US schools vary wildly from one school district to the next and one thing they have in common is a biased editing of the history of the American Presidency based on the continuation of White Supremacy. Eplore the unbiased history of the Presidents of the United Sates of America and pick your favorite!</p>
                                         <button
                                             className="save btn btn-primary"
                                             onClick={this.playPres}
