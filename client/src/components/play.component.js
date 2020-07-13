@@ -95,7 +95,7 @@ export default class Landing extends Component {
                                 <div className="card m-1">
                                     <h5 className="card-header">Susannah Levy</h5>
                                     <div className="card-body">
-                                        <p className="card-text">Susannah Levy identifies as a White, cis gendered Female. She has served as an OBGyn/Obstetrics Nurse at <a href="https://zuckerbergsanfranciscogeneral.org/about-us/" target="_blank" rel="noopener noreferrer">UCSF General Hospital</a> for the last 23 years and is the Mother of 2 adult children.
+                                        <p className="card-text">Susannah Levy identifies as a White, cis gendered Female. She has served as an OBGyn/Obstetrics Nurse at <a href="https://zuckerbergsanfranciscogeneral.org/about-us/" target="_blank" rel="noopener noreferrer">San Francisco General Hospital ( SFGH )</a> for the last 23 years and is the Mother of 2 adult children.
                                     </p>
                                         <button
                                             className="save btn btn-primary"
@@ -113,8 +113,8 @@ export default class Landing extends Component {
                                 <div className="card m-1">
                                     <h5 className="card-header">Who's Your President</h5>
                                     <div className="card-body">
-                                        <p className="card-text">Explore the un-filtered histories of the Presidents of the United States.</p>
-                                        <p className="card-text">Even today, text books in US Schools vary wildly from one school district to the next and the only thing they have in common is a biased editing of the history of the American Presidency based on the continuation of White Supremecy. Eplore the un-biased history of the Presidents of the United Sates of America and pick your favorite!</p>
+                                        <p className="card-text">Explore the unfiltered histories of the Presidents of the United States.</p>
+                                        <p className="card-text">Even today, text books in US schools vary wildly from one school district to the next and one thing they have in common is a biased editing of the history of the American Presidency based on the continuation of White Supremecy. Eplore the unbiased history of the Presidents of the United Sates of America and pick your favorite!</p>
                                         <button
                                             className="save btn btn-primary"
                                             onClick={this.playPres}

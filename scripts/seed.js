@@ -12,13 +12,13 @@ const sueSeed = [
     {
     question: "President Eisenhower is most known for which event in the civil rights movement?",
     a: "granting permission for the March on Washington",
-    b: "urging the Brooklyn Dodgers for sign Jackie Robinson",
+    b: "urging the Brooklyn Dodgers to sign Jackie Robinson",
     c: "using federal troops to integrate schools in Little Rock",
     answer: "c",
     info: "",
     links: [
-        { link: "" },
-        { link: "" }
+        { link: "https://www.zinnedproject.org/materials/a-school-year-like-no-other/" },
+        { link: "https://www.eisenhowerlibrary.gov/research/online-documents/civil-rights-little-rock-school-integration-crisis" }
     ]
 },
 {
@@ -70,10 +70,10 @@ const sueSeed = [
     ]
 },
 {
-    question: "hich was the policy of the Federal Government in the late 1880s as exemplified by the Dawes Act?",
-    a: "granting full citizen rights to Native Americanswer",
-    b: "moving Native Americanswer to cities to supply labor",
-    c: "breaking up tribal lands compelling Native Americanswer to abandon their cultural traditions and assimilate",
+    question: "Which was the policy of the Federal Government in the late 1880s as exemplified by the Dawes Act?",
+    a: "granting full citizenship rights to Native Americans",
+    b: "moving Native Americans to cities to supply labor",
+    c: "breaking up tribal lands compelling Native Americans to abandon their cultural traditions and assimilate",
     answer: "c",
     info: "",
     links: [
@@ -107,7 +107,7 @@ const sueSeed = [
 },
 {
     question: "what is the name of the FBI’s counterintelligence program in the 1960’s / 70’s targeting activists such as the Black freedom movement ?",
-    a: "ACLU.",
+    a: "ACLU",
     b: "COINTELPRO",
     c: "ANC",
     answer: "b",
@@ -120,7 +120,7 @@ const sueSeed = [
 {
     question: "which American revolutionary thinker published African Slavery in America, indicting the colonists’ advocacy for their own freedom while supporting slavery ?",
     a: "Thomas Paine",
-    b: "1Thomas Jefferson", 
+    b: "Thomas Jefferson", 
     c: "Alexander Hamilton",
     answer: "a",
     info: "",
