@@ -31,7 +31,6 @@ export default class Questions extends Component {
     componentDidMount() {
         API.getQuestions()
             .then(res => {
-                console.log(res.data);
                 this.setState({
                     questions: res.data
                 });
@@ -42,14 +41,11 @@ export default class Questions extends Component {
                     question: this.state.questions[this.state.questionNum],
                     userID: JSON.parse(localStorage.getItem('loginData'))
                 });
-                console.log(this.state.userID);
                 API.getUserById(this.state.userID.userid)
                     .then(res => {
                         this.setState({
                             user: res.data.user
                         });
-                        console.log("----- user -");
-                        console.log(this.state.user.name);
                     });
             });
     }
@@ -130,7 +126,7 @@ export default class Questions extends Component {
                     <div className="row">
                         <div className="col-sm-12">
                             <div className="card bg-light m-1 mt-4">
-                            <h5 className="card-header">Question {this.state.questionNum}</h5>
+                                <h5 className="card-header">Question {this.state.questionNum}</h5>
                                 <div className="card-body">
                                     <p className="card-text">{this.state.question.question}</p>
                                 </div>
@@ -182,8 +178,8 @@ export default class Questions extends Component {
                                                 />
                                                 &nbsp;&nbsp;{this.state.question.c}
                                             </label>
-
                                         </div>
+
                                     </div>
                                 </div>
                                 :
@@ -202,7 +198,7 @@ export default class Questions extends Component {
                                                 onClick={() => this.qAnswered()}
                                                 className="save btn btn-info"
                                                 type="submit">answer
-                                    </button>
+                                            </button>
                                             : ""}
                                         {this.state.answered ?
                                             <QInfo
@@ -229,7 +225,6 @@ export default class Questions extends Component {
                             </div>
                         </div>
                     </div>
-
 
                 </div>
             </Container>

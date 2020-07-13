@@ -122,76 +122,112 @@ export default class Questions extends Component {
             <Container>
                 <Navbar />
                 <div className="container w-75">
-                    <div className="card p-4 m-4">
-                        <h4>Question {this.state.questionNum}</h4>
-                    </div>
-                    <div>
-                        
-                        <div className="card p-4 m-4">
-                            {this.state.question.question}
-                        </div>
 
-                        {!this.state.answered ?
-                            <div className="card p-4 m-4">
-                                <p>
-                                    <label>
-                                        <input
-                                            type="radio"
-                                            value="a"
-                                            checked={this.state.selectedOption === "a"}
-                                            onChange={this.onValueChange}
-                                        />
-                                        &nbsp;&nbsp;{this.state.question.a}<br />
-                                    </label>
-                                </p>
-                                <p>
-                                    <label>
-                                        <input
-                                            type="radio"
-                                            value="b"
-                                            checked={this.state.selectedOption === "b"}
-                                            onChange={this.onValueChange}
-                                        />
-                                        &nbsp;&nbsp;{this.state.question.b}<br />
-                                    </label>
-                                </p>
-                                <label>
-                                    <input
-                                        type="radio"
-                                        value="c"
-                                        checked={this.state.selectedOption === "c"}
-                                        onChange={this.onValueChange}
-                                    />
-                                        &nbsp;&nbsp;{this.state.question.c}<br />
-                                </label>
-                            </div> : ""}
-
-                        <div className="card p-4 m-4">
-                            {!this.state.answered ?
-                                <button
-                                    onClick={() => this.qAnswered()}
-                                    className="save btn btn-info"
-                                    type="submit">answer
-                                </button>
-                                : ""}
-                            {this.state.answered ?
-                                <QInfo
-                                    response={this.state.selectedOption}
-                                    answer={this.state.question.answer}
-                                    ID={this.state.question._id}
-                                    info={this.state.question.info}
-                                    thisQ_links={this.state.question.links}
-                                />
-                                : ""}
-                            {this.state.answered ?
-                                <button
-                                    onClick={() => this.handleFormSubmit()}
-                                    className="save btn btn-danger"
-                                    type="submit">next question
-                                </button>
-                                : ""}
+                    <div className="row">
+                        <div className="col-sm-12">
+                            <div className="card bg-light m-1 mt-4">
+                                <h5 className="card-header">Question {this.state.questionNum}</h5>
+                                <div className="card-body">
+                                    <p className="card-text">{this.state.question.question}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+
+                    <div className="row">
+                        <div className="col-sm-12">
+                            {!this.state.answered
+                                ?
+                                <div className="card bg-light m-1">
+                                    <div className="card-body">
+
+                                        <div className="card-text">
+                                            <label>
+                                                a.&nbsp;&nbsp;
+                                            <input
+                                                    type="radio"
+                                                    value="a"
+                                                    checked={this.state.selectedOption === "a"}
+                                                    onChange={this.onValueChange}
+                                                />
+                                                &nbsp;&nbsp;{this.state.question.a}<br />
+                                            </label>
+                                        </div>
+
+                                        <div className="card-text">
+                                            <label>
+                                                b.&nbsp;&nbsp;
+                                                <input
+                                                    type="radio"
+                                                    value="b"
+                                                    checked={this.state.selectedOption === "b"}
+                                                    onChange={this.onValueChange}
+                                                />
+                                                &nbsp;&nbsp;{this.state.question.b}<br />
+                                            </label>
+                                        </div>
+
+                                        <div className="card-text">
+                                            <label>
+                                                c.&nbsp;&nbsp;
+                                                <input
+                                                    type="radio"
+                                                    value="c"
+                                                    checked={this.state.selectedOption === "c"}
+                                                    onChange={this.onValueChange}
+                                                />
+                                                &nbsp;&nbsp;{this.state.question.c}<br />
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                :
+                                ""}
+                        </div>
+                    </div>
+
+
+                    <div className="row">
+                        <div className="col-sm-12">
+                            <div className="card bg-light m-1">
+                                <div className="card-body">
+
+                                    <div className="card-text">
+                                        {!this.state.answered ?
+                                            <button
+                                                onClick={() => this.qAnswered()}
+                                                className="save btn btn-info"
+                                                type="submit">answer
+                                            </button>
+                                            : ""}
+                                        {this.state.answered ?
+                                            <QInfo
+                                                response={this.state.selectedOption}
+                                                answer={this.state.question.answer}
+                                                ID={this.state.question._id}
+                                                info={this.state.question.info}
+                                                links={this.state.question.links}
+                                            />
+                                            : ""}
+                                    </div>
+
+                                    <div className="card-text">
+                                        {this.state.answered ?
+                                            <button
+                                                onClick={() => this.handleFormSubmit()}
+                                                className="save btn btn-danger"
+                                                type="submit">next question
+                                            </button>
+                                            : ""}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </Container>
         )
