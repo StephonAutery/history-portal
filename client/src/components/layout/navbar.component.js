@@ -34,7 +34,7 @@ export default class Navbar extends Component {
                         </li>
                     </ul>
                     <ul className="nav navbar-nav navbar-right">
-                        <li className="nav-item pr-3">User&nbsp;:&nbsp;&nbsp;{this.state.user.name}</li>
+                        <li className="nav-item pr-3 pl-3">User&nbsp;:&nbsp;&nbsp;{this.state.user.name}</li>
                     </ul>
                 </nav>
 
