@@ -74,38 +74,17 @@ export default class Questions extends Component {
                     </div>
 
                     <div className="row">
-                        {/* < div  className="card  m-1">
-                                <div className="card-body">
-                                    <div className="card-text"> */}
+
                         {this.state.presidents.map((pres, index) => (
-                            <div key={index} className="col-sm-6 p-2 w-25">
+                            <div key={index} className="col-sm-12 p-2">
 
 
-                                {/* <a href="/presinfo"
-                                    > */}
-                                    <h6 className="card-header" onClick={() => this.handleFormSubmit(pres._id)}>{pres.number} - {pres.president}</h6>
-                                {/* </a> */}
+                                <h6 className="card-header" onClick={() => this.handleFormSubmit(pres._id)}>{pres.number} - {pres.president}</h6>
                                 <h6 className="p-3">{pres.took_office} - {pres.left_office}</h6>
-                                
-
-
-                                {/* <p key={index}>
-                                    <button
-                                        className="btn btn-primary m-2"
-                                        type="submit"
-                                        onClick={() => this.handleFormSubmit(pres._id)}>
-                                        <h6 className="card-header">{pres.number} - {pres.president}</h6>
-                                        {pres.took_office} - {pres.left_office}
-                                    </button>
-                                </p> */}
-
 
 
                             </div>
                         ))}
-                        {/* </div>
-                                </div>
-                            </div> */}
                     </div>
 
                 </div>
