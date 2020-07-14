@@ -1,6 +1,6 @@
 {
-  "name": "social-quiz",
-  "homepage": "https://stephonautery.github.io/social-quiz/",
+  "name": "history-portal",
+  "homepage": "https://stephonautery.github.io/history-portal/",
   "version": "1.0.0",
   "description": "learn your history, be a better citizen",
   "main": "server.js",
