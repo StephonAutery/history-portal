@@ -41,18 +41,18 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
-const fs = require('fs');
+// const fs = require('fs');
 
-async function print(path) {
-    console.log("----- path -");
-    console.log(path);
-    console.log("----- path -");
-  const dir = await fs.promises.opendir(path);
-  for await (const dirent of dir) {
-    console.log(dirent.name);
-  }
-}
-print('./client/public/images/pres').catch(console.error);
+// async function print(path) {
+//     console.log("----- path -");
+//     console.log(path);
+//     console.log("----- path -");
+//   const dir = await fs.promises.opendir(path);
+//   for await (const dirent of dir) {
+//     console.log(dirent.name);
+//   }
+// }
+// print('./client/public/images/pres').catch(console.error);
 
 // routes
 // app.use("/api/users", users);

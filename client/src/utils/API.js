@@ -7,15 +7,12 @@ export default {
         return axios.get("/api/questions");
     },
     getSue: function () {
-        console.log("----- sue api.js -");
         return axios.get("/api/questions/sue");
     },
     getPres: function () {
-        console.log("----- presidents api.js -");
         return axios.get("/api/questions/pres");
     },
     getPresByID: function(id) {
-        console.log(id);
         return axios.get("/api/presinfo/" + id);
     },
     // save a question to the database
@@ -42,7 +39,6 @@ export default {
     // get a single user
     getUserById: function (_id)
      {
-        console.log(_id);
         return axios.get("/api/users/" + _id);
     },
     // get a single user
@@ -51,7 +47,6 @@ export default {
     },
     // login user
     loginUser: function (name) {
-        console.log(name);
         return axios.post("api/users/login", name);
     },
     // logout user
@@ -61,7 +56,6 @@ export default {
     },
     // signup a user
     signUp: function (newUser){
-        console.log(newUser);
         return axios.post("api/users/register", newUser);
     },
 

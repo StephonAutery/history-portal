@@ -17,7 +17,6 @@ export default class Landing extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props);
         if (!localStorage.getItem('loginData')) {
             this.setState({
                 redirect: "landing",
