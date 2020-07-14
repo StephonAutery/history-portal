@@ -1,7 +1,6 @@
 import React from "react";
 
 function QInfo(props) {
-    console.log(props.links)
     return (
         <div className="card-text">
             <p>You answered: {props.response}</p>

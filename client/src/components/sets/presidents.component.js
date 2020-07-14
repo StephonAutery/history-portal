@@ -3,7 +3,7 @@ import { Component } from 'react';
 import API from '../../utils/API';
 import Container from "../container.component";
 import { Redirect } from "react-router-dom";
-import PresInfo from "../info/presInfo.component";
+// import PresInfo from "../info/presinfo.component";
 import Navbar from "../layout/navbar.component";
 
 export default class Questions extends Component {
@@ -14,7 +14,7 @@ export default class Questions extends Component {
         questionSet: "getQuestions",
         selectedOption: '',
         presNum: 0,
-        pres: ""
+        presID: ""
     }
 
     componentDidMount() {
@@ -37,11 +37,17 @@ export default class Questions extends Component {
         });
     }
 
-    handleFormSubmit = event => {
+    handleFormSubmit(present) {
+        console.log(present);
         return (
-            <PresInfo />
+            this.setState({
+                presID: present,
+                redirect: "/presinfo"
+            })
         );
+    }
 
+    getPres() {
     }
 
     render() {
@@ -50,8 +56,8 @@ export default class Questions extends Component {
                 // sending data to next page
                 pathname: this.state.redirect,
                 state: {
-                    id: this.props.location.state.id,
-                    pres: this.state.pres._id
+                    // id: this.props.location.state.id,
+                    pres: this.state.presID
                 }
             }} />
         }
@@ -70,28 +76,23 @@ export default class Questions extends Component {
 
                     <div className="row">
                         <div className="col">
-                            {this.state.presidents.map((pres, index) => (
-                                < div key={index} className="card  m-1">
-                                    <div key={pres._id} className="card-body">
-                                        <div className="card-text">
-                                            <h4>{pres.president} - {index}</h4><hr></hr>
-                                            <h4>{pres.number}</h4>
-                                                birth year: {pres.birth_year}  <br />
-                                                took office: {pres.took_office}<br />
-                                                left office: {pres.left_office}<br />
-                                                death year: {pres.death_year}<br />
-                                                party: {pres.party}
-                                            <hr />
-                                            {/* <p>
-                                                <a href="/play" className="btn btn-info">return to portal</a>
-                                            </p> */}
-                                            <p>
-                                                <a href="/play" data={pres._id} className="btn btn-info">find out more{pres._id}</a>
+                            {/* < div  className="card  m-1">
+                                <div className="card-body">
+                                    <div className="card-text"> */}
+                                        {this.state.presidents.map((pres, index) => (
+                                            <p key={index}>
+                                                <button
+                                                    className="btn btn-primary m-2"
+                                                    type="submit"
+                                                    onClick={() => this.handleFormSubmit(pres._id)}>
+                                                    {pres.number} - {pres.president} <br />
+                                                    {pres.took_office} - {pres.left_office}
+                                                </button>
                                             </p>
-                                        </div>
-                                    </div>
+                                        ))}
+                                    {/* </div>
                                 </div>
-                            ))}
+                            </div> */}
                         </div>
                     </div>
 

@@ -1,9 +1,10 @@
 const router = require("express").Router();
 const questionsRoutes = require("./questions.routes");
 const resultsRoutes = require("./results.routes");
-const sueRoutes = require("./questions.routes");
+const presRoutes = require("./pres.routes");
 const usersRoutes = require("./users.routes");
 const statsRoutes = require("./stats.routes");
+const { route } = require("./questions.routes");
 
 // questions routes
 router.use("/questions", questionsRoutes);
@@ -22,5 +23,8 @@ router.use("/results", resultsRoutes);
 
 // //results routes
 router.use("/stats", statsRoutes);
+
+// pres routes
+router.use("/presinfo", presRoutes);
 
 module.exports = router;

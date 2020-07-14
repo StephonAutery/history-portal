@@ -30,6 +30,12 @@ const presidentSchema = new Schema({
     party: {
         type: String,
         required: true
+    },
+    info: { 
+        type: String 
+    },
+    links: { 
+        type: Object
     }
 });
 

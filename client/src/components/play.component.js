@@ -86,7 +86,7 @@ export default class Landing extends Component {
                                             className="save btn btn-primary"
                                             onClick={this.playStephon}
                                             type="submit"
-                                            value="submit">Stephon's Quiz
+                                            value="submit">Stephon's Questions
                                     </button>
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@ export default class Landing extends Component {
                                             className="save btn btn-primary"
                                             onClick={this.playSue}
                                             type="submit"
-                                            value="submit">Susannah's Quiz
+                                            value="submit">Susannah's Questions
                                     </button>
                                     </div>
                                 </div>

@@ -42,7 +42,10 @@ export default class Navbar extends Component {
                 <nav className="navbar m-0 p-0 bg-dark">
                     <ul className="nav ">
                         <li className="nav-item">
-                            <a className="nav-link" href="/">Play</a>
+                            <a className="nav-link" href="/">Questions</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/presidents">Presidents</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="/logout">Logout</a>

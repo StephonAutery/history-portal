@@ -4,6 +4,7 @@ import sueQuestions from "./components/sets/sueQuestions.component";
 import Presidents from "./components/sets/presidents.component";
 import Questions from "./components/sets/questions.component";
 import MyStats from "./components/info/mystats.component";
+import PresInfo from "./components/info/presinfo.component";
 // import Navbar from "./components/layout/navbar.component";
 import Landing from "./components/landing.component";
 import Signup from "./components/signup.component";
@@ -84,6 +85,7 @@ class App extends Component {
             <Route path="/landing" component={Landing} />
             <Route path="/sueQuestions" component={sueQuestions} />
             <Route path="/presidents" component={Presidents} />
+            <Route path="/presinfo" component={PresInfo} />
             <Route path="/play" component={Play} />
           </Switch>
         </Router>

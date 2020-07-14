@@ -14,6 +14,10 @@ export default {
         console.log("----- presidents api.js -");
         return axios.get("/api/questions/pres");
     },
+    getPresByID: function(id) {
+        console.log(id);
+        return axios.get("/api/presinfo/" + id);
+    },
     // save a question to the database
     saveQuestion: function (question) {
         return axios.post("/api/questions", question)
