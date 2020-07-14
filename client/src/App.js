@@ -5,7 +5,6 @@ import Presidents from "./components/sets/presidents.component";
 import Questions from "./components/sets/questions.component";
 import MyStats from "./components/info/mystats.component";
 import PresInfo from "./components/info/presinfo.component";
-// import Navbar from "./components/layout/navbar.component";
 import Landing from "./components/landing.component";
 import Signup from "./components/signup.component";
 import Logout from "./components/logout.component";
