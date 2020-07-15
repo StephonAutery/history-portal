@@ -3,7 +3,6 @@ import { Component } from 'react';
 import API from '../../utils/API';
 import Container from "../container.component";
 import { Redirect } from "react-router-dom";
-// import PresInfo from "../info/presinfo.component";
 import Navbar from "../layout/navbar.component";
 
 export default class Questions extends Component {
@@ -18,17 +17,27 @@ export default class Questions extends Component {
     }
 
     componentDidMount() {
-        API.getPres()
-            .then(res => {
-                this.setState({
-                    presidents: res.data
+        if (localStorage.getItem('loginData')) {
+
+            API.getPres()
+                .then(res => {
+                    this.setState({
+                        presidents: res.data,
+                        userID: (JSON.parse(localStorage.getItem('loginData')))
+                    })
                 })
+                .then(() => {
+                    this.setState({
+                        presNum: 1,
+                    });
+                })
+
+        } else {
+            this.setState({
+                redirect: "/landing"
             })
-            .then(() => {
-                this.setState({
-                    presNum: 1,
-                });
-            })
+        }
+
     }
 
     onValueChange = event => {
