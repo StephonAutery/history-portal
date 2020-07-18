@@ -35,11 +35,11 @@ mongoose.connect(
 // app.use(passport.initialize());
 
 // passport config
-require("./config/passport")(passport);
+// require("./config/passport")(passport);
 
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
-}
+// if (process.env.NODE_ENV === "production") {
+//     app.use(express.static("client/build"));
+// }
 
 // const fs = require('fs');
 

@@ -5,7 +5,7 @@ import Container from "../container.component";
 import { Redirect } from "react-router-dom";
 import Navbar from "../layout/navbar.component";
 import Footer from "../layout/footer.component";
-
+import DropdownButton from 'react-bootstrap/DropdownButton'
 
 export default class Questions extends Component {
     state = {
@@ -72,6 +72,16 @@ export default class Questions extends Component {
             <Container>
                 <Navbar />
                 <div className="container w-75">
+                <div className="row">
+                        <div className="col-sm-12">
+                            <div className="card bg-light m-1 mt-4">
+                                <h5 className="card-header">1</h5>
+                                <div className="card-body">
+                                    <p className="card-text">2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div className="row">
                         <div className="col-sm-12">
