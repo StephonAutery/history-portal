@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import API from '../../utils/API';
 import Container from "../container.component";
 import Navbar from "../layout/navbar.component";
+import Footer from "../layout/footer.component";
 
 export default class Users extends Component {
     state = {
@@ -114,6 +115,7 @@ export default class Users extends Component {
                     </div>
 
                 </div>
+                <Footer />
             </Container >
         )
     }
