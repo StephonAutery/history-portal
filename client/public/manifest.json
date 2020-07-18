@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "History Portal",
+  "name": "https://history-portal.herokuapp.com",
   "icons": [
     {
       "src": "Favicon.ico",
