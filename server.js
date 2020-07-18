@@ -32,14 +32,14 @@ mongoose.connect(
     .catch(err => console.log(err));
 
 // passport middleware
-// app.use(passport.initialize());
+app.use(passport.initialize());
 
-// passport config
-// require("./config/passport")(passport);
+passport config
+require("./config/passport")(passport);
 
-// if (process.env.NODE_ENV === "production") {
-//     app.use(express.static("client/build"));
-// }
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+}
 
 // const fs = require('fs');
 
