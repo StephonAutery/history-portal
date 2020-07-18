@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
 import Navbar from "./layout/navbar.component";
 import Container from "./container.component";
+import Footer from "./layout/footer.component";
 
 export default class Landing extends Component {
     state = {
@@ -53,6 +54,7 @@ export default class Landing extends Component {
                     </div>
 
                 </div >
+                <Footer />
             </Container>
         )
     }

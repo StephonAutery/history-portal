@@ -3,153 +3,646 @@ const db = require("../models");
 
 // Connect to MongoDB via Mongoose
 mongoose.connect(
-	// process.env.MONGODB_URI || "mongodb://localhost/historyPortal"
-	process.env.MONGODB_URI || "mongodb://a-new-game:1history@ds331568.mlab.com:31568/heroku_vm824khm"
+    // process.env.MONGODB_URI || "mongodb://localhost/historyPortal"
+    process.env.MONGODB_URI || "mongodb://a-new-game:1history@ds331568.mlab.com:31568/heroku_vm824khm"
 );
 
 // create the data objects
-const sueSeed = [
+const presidentSeed = [
     {
-    question: "President Eisenhower is most known for which event in the civil rights movement?",
-    a: "Granting permission for the March on Washington",
-    b: "Urging the Brooklyn Dodgers to sign Jackie Robinson",
-    c: "Using federal troops to integrate schools in Little Rock",
-    answer: "c",
-    info: "On May 17, 1954, the U.S. Supreme Court ruled in Brown vs. Topeka Board of Education that segregated schools are \"inherently unequal.\" In September 1957, as a result of that ruling, nine African-American students enrolled at Central High School in Little Rock, Arkansas. The ensuing struggle between segregationists and integrationists, the State of Arkansas and the federal government, President Dwight D. Eisenhower and Arkansas Governor Orval Faubus, has become known in modern American history as the \"Little Rock Crisis.\" The crisis gained world-wide attention. When Governor Faubus ordered the Arkansas National Guard to surround Central High School to keep the nine students from entering the school, President Eisenhower ordered the 101st Airborne Division into Little Rock to insure the safety of the \"Little Rock Nine\" and that the rulings of the Supreme Court were upheld.",
-    links: [
-        { link: "https://www.zinnedproject.org/materials/a-school-year-like-no-other/" },
-        { link: "https://www.eisenhowerlibrary.gov/research/online-documents/civil-rights-little-rock-school-integration-crisis" }
-    ]
-},
-{
-    question: "Which of the following were causes supported by Emma Goldman?",
-    a: "Birth control information for women",
-    b: "Atheism",
-    c: "Anarchism",
-    answer: "all",
-    info: "",
-    links: [
-        { link: "" },
-        { link: "" }
-    ]
-},
-{
-    question: "In what year did women obtain the right to vote in the United States?",
-    a: "1920",
-    b: "1880",
-    c: "1962",
-    answer: "a",
-    info: "",
-    links: [
-        { link: "" },
-        { link: "" }
-    ]
-},
-{
-    question: "In what state was gold found during the 1949 Gold Rush?",
-    a: "New York.",
-    b: "California.",
-    c: "Texas",
-    answer: "b",
-    info: "",
-    links: [
-        { link: "" },
-        { link: "" }
-    ]
-},
-{
-    question: "Which geographical advantage did the United States gain with the Louisiana Purchase?",
-    a: "A Mississippi River port on the Gulf of Mexico.",
-    b: "Access to southern ports on the Pacific Ocean.",
-    c: "Control of land west of the Rocky Mountains",
-    answer: "a",
-    info: "",
-    links: [
-        { link: "" },
-        { link: "" }
-    ]
-},
-{
-    question: "Which was the policy of the Federal Government in the late 1880s as exemplified by the Dawes Act?",
-    a: "Granting full citizenship rights to Native Americans",
-    b: "Moving Native Americans to cities to supply labor",
-    c: "Breaking up tribal lands compelling Native Americans to abandon their cultural traditions and assimilate",
-    answer: "c",
-    info: "",
-    links: [
-        { link: "" },
-        { link: "" }
-    ]
-},
-{
-    question: "Which of the following groups DID receive labor protections such as social security benefits under the New Deal ?",
-    a: "Educational workers",
-    b: "Agricultural workers.",
-    c: "Industrial workers",
-    answer: "c",
-    info: "",
-    links: [
-        { link: "" },
-        { link: "" }
-    ]
-},
-{
-    question: "Which of the following is true about Fred Korematsu ?",
-    a: "He was a U.S.Citizen",
-    b: "He refused to evacuate San Leandro, CA and be moved to a Japanese internment camp",
-    c: "He lost his challenge in 1944 when the Supreme Court ruled that civil liberties could be denied on the basis of race / national origin",
-    answer: "all",
-    info: "",
-    links: [
-        { link: "" },
-        { link: "" }
-    ]
-},
-{
-    question: "What is the name of the FBI’s counterintelligence program in the 1960’s / 70’s targeting activists such as the Black freedom movement ?",
-    a: "ACLU",
-    b: "COINTELPRO",
-    c: "ANC",
-    answer: "b",
-    info: "",
-    links: [
-        { link: "" },
-        { link: "" }
-    ]
-},
-{
-    question: "Which American revolutionary thinker published African Slavery in America, indicting the colonists’ advocacy for their own freedom while supporting slavery ?",
-    a: "Thomas Paine",
-    b: "Thomas Jefferson", 
-    c: "Alexander Hamilton",
-    answer: "a",
-    info: "",
-    links: [
-        { link: "" },
-        { link: "" }
-    ]
-},
-{
-    question: "May 1, International Workers Day, began as a commemoration of which event ?",
-    a: "The 1866 Memphis Massacre.",
-    b: "The 1970 Kent State Massacre.",
-    c: "The 1886 Haymarket Tragedy",
-    answer: "c",
-    info: "",
-    links: [
-        { link: "" },
-        { link: "" }
-    ]
-}
-];
+        "number": 01,
+        "president": "George Washington",
+        "birth_year": 1732,
+        "death_year": 1799,
+        "took_office": "1789-04-30",
+        "left_office": "1797-03-04",
+        "party": "No Party",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 02,
+        "president": "John Adams",
+        "birth_year": 1735,
+        "death_year": 1826,
+        "took_office": "1797-03-04",
+        "left_office": "1801-03-04",
+        "party": "Federalist",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 03,
+        "president": "Thomas Jefferson",
+        "birth_year": 1743,
+        "death_year": 1826,
+        "took_office": "1801-03-04",
+        "left_office": "1809-03-04",
+        "party": "Democratic-Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 04, "president": "James Madison",
+        "birth_year": 1751,
+        "death_year": 1836,
+        "took_office": "1809-03-04",
+        "left_office": "1817-03-04",
+        "party": "Democratic-Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 05, "president": "James Monroe",
+        "birth_year": 1758,
+        "death_year": 1831,
+        "took_office": "1817-03-04",
+        "left_office": "1825-03-04",
+        "party": "Democratic-Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 06, "president": "John Quincy Adams",
+        "birth_year": 1767,
+        "death_year": 1848,
+        "took_office": "1825-03-04",
+        "left_office": "1829-03-04",
+        "party": "Democratic-Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 07,
+        "president": "Andrew Jackson",
+        "birth_year": 1767,
+        "death_year": 1845,
+        "took_office": "1829-03-04",
+        "left_office": "1837-03-04",
+        "party": "Democratic",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 08,
+        "president": "Martin Van Buren",
+        "birth_year": 1782,
+        "death_year": 1862,
+        "took_office": "1837-03-04",
+        "left_office": "1841-03-04",
+        "party": "Democratic",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 09,
+        "president": "William Henry Harrison",
+        "birth_year": 1773,
+        "death_year": 1841,
+        "took_office": "1841-03-04",
+        "left_office": "1841-04-04",
+        "party": "Whig",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 10,
+        "president": "John Tyler",
+        "birth_year": 1790,
+        "death_year": 1862,
+        "took_office": "1841-04-04",
+        "left_office": "1845-03-04",
+        "party": "Whig",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 11,
+        "president": "James K Polk",
+        "birth_year": 1795,
+        "death_year": 1849,
+        "took_office": "1845-03-04",
+        "left_office": "1849-03-04",
+        "party": "Democratic",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 12,
+        "president": "Zachary Taylor",
+        "birth_year": 1784,
+        "death_year": 1850,
+        "took_office": "1849-03-04",
+        "left_office": "1850-07-09",
+        "party": "Whig",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 13,
+        "president": "Millard Fillmore",
+        "birth_year": 1800,
+        "death_year": 1874,
+        "took_office": "1850-07-09",
+        "left_office": "1853-03-04",
+        "party": "Whig",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 14,
+        "president": "Franklin Pierce",
+        "birth_year": 1804,
+        "death_year": 1869,
+        "took_office": "1853-03-04",
+        "left_office": "1857-03-04",
+        "party": "Democratic",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 15,
+        "president": "James Buchanan",
+        "birth_year": 1791,
+        "death_year": 1868,
+        "took_office": "1857-03-04",
+        "left_office": "1861-03-04",
+        "party": "Democratic",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 16,
+        "president": "Abraham Lincoln",
+        "birth_year": 1809,
+        "death_year": 1865,
+        "took_office": "1861-03-04",
+        "left_office": "1865-04-15",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 17,
+        "president": "Andrew Johnson",
+        "birth_year": 1808,
+        "death_year": 1875,
+        "took_office": "1865-04-15",
+        "left_office": "1869-03-04",
+        "party": "Democratic",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 18,
+        "president": "Ulysses S Grant",
+        "birth_year": 1822,
+        "death_year": 1885,
+        "took_office": "1869-03-04",
+        "left_office": "1877-03-04",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 19,
+        "president": "Rutherford B Hayes",
+        "birth_year": 1822,
+        "death_year": 1893,
+        "took_office": "1877-03-04",
+        "left_office": "1881-03-04",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 20,
+        "president": "James A Garfield",
+        "birth_year": 1831,
+        "death_year": 1881,
+        "took_office": "1881-03-04",
+        "left_office": "1881-09-19",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 21,
+        "president": "Chester A Arthur",
+        "birth_year": 1829, "death_year": 1886,
+        "took_office": "1881-09-19",
+        "left_office": "1885-03-04",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 22,
+        "president": "Grover Cleveland",
+        "birth_year": 1837,
+        "death_year": 1908,
+        "took_office": "1885-03-04",
+        "left_office": "1889-03-04",
+        "party": "Democratic",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 23,
+        "president": "Benjamin Harrison",
+        "birth_year": 1833,
+        "death_year": 1901,
+        "took_office": "1889-03-04",
+        "left_office": "1893-03-04",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 24,
+        "president": "Grover Cleveland",
+        "birth_year": 1837,
+        "death_year": 1908,
+        "took_office": "1893-03-04",
+        "left_office": "1897-03-04",
+        "party": "Democratic",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 25,
+        "president": "William McKinley",
+        "birth_year": 1843,
+        "death_year": 1901,
+        "took_office": "1897-03-04",
+        "left_office": "1901-09-14",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 26,
+        "president": "Theodore Roosevelt",
+        "birth_year": 1858,
+        "death_year": 1919,
+        "took_office": "1901-09-14",
+        "left_office": "1909-03-04",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 27,
+        "president": "William Howard Taft",
+        "birth_year": 1857,
+        "death_year": 1930,
+        "took_office": "1909-03-04",
+        "left_office": "1913-03-04",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 28,
+        "president": "Woodrow Wilson",
+        "birth_year": 1856,
+        "death_year": 1924,
+        "took_office": "1913-03-04",
+        "left_office": "1921-03-04",
+        "party": "Democratic",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 29,
+        "president": "Warren G Harding",
+        "birth_year": 1865,
+        "death_year": 1923,
+        "took_office": "1921-03-04",
+        "left_office": "1923-08-02",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 30,
+        "president": "Calvin Coolidge",
+        "birth_year": 1872,
+        "death_year": 1933,
+        "took_office": "1923-08-02",
+        "left_office": "1929-03-04",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 31,
+        "president": "Herbert Hoover",
+        "birth_year": 1874, "death_year": 1964,
+        "took_office": "1929-03-04",
+        "left_office": "1933-03-04",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 32,
+        "president": "Franklin D Roosevelt",
+        "birth_year": 1882,
+        "death_year": 1945,
+        "took_office": "1933-03-04",
+        "left_office": "1945-04-12", "party": "Democratic",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 33,
+        "president": "Harry S Truman",
+        "birth_year": 1884,
+        "death_year": 1972,
+        "took_office": "1945-04-12",
+        "left_office": "1953-01-20",
+        "party": "Democratic",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 34,
+        "president": "Dwight D Eisenhower",
+        "birth_year": 1890,
+        "death_year": 1969,
+        "took_office": "1953-01-20",
+        "left_office": "1961-01-20",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 35,
+        "president": "John F Kennedy",
+        "birth_year": 1917,
+        "death_year": 1963,
+        "took_office": "1961-01-20",
+        "left_office": "1963-11-22",
+        "party": "Democratic",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 36,
+        "president": "Lyndon B Johnson",
+        "birth_year": 1908,
+        "death_year": 1973,
+        "took_office": "1963-11-22",
+        "left_office": "1969-01-20",
+        "party": "Democratic",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 37,
+        "president": "Richard Nixon",
+        "birth_year": 1913,
+        "death_year": 1994,
+        "took_office": "1969-01-20",
+        "left_office": "1974-08-09",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 38,
+        "president": "Gerald Ford",
+        "birth_year": 1913,
+        "death_year": 2006,
+        "took_office": "1974-08-09",
+        "left_office": "1977-01-20",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 39,
+        "president": "Jimmy Carter",
+        "birth_year": 1924,
+        "death_year": null,
+        "took_office": "1977-01-20",
+        "left_office": "1981-01-20",
+        "party": "Democratic",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 40,
+        "president": "Ronald Reagan",
+        "birth_year": 1911,
+        "death_year": 2004,
+        "took_office": "1981-01-20",
+        "left_office": "1989-01-20",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 41,
+        "president": "George H W Bush",
+        "birth_year": 1924,
+        "death_year": 2018,
+        "took_office": "1989-01-20",
+        "left_office": "1993-01-20",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 42,
+        "president": "Bill Clinton",
+        "birth_year": 1946,
+        "death_year": null,
+        "took_office": "1993-01-20",
+        "left_office": "2001-01-20",
+        "party": "Democratic",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 43,
+        "president": "George W Bush",
+        "birth_year": 1946,
+        "death_year": null,
+        "took_office": "2001-01-20",
+        "left_office": "2009-01-20",
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 44,
+        "president": "Barack Obama",
+        "birth_year": 1961,
+        "death_year": null,
+        "took_office": "2009-01-20",
+        "left_office": "2017-01-20",
+        "party": "Democratic",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    },
+    {
+        "number": 45,
+        "president": "Donald J Trump",
+        "birth_year": 1946,
+        "death_year": null,
+        "took_office": "2017-01-20",
+        "left_office": null,
+        "party": "Republican",
+        info: "",
+        links: [
+            { link: "" },
+            { link: "" }
+        ]
+    }
+]
 
-db.Sue.remove({})
-  .then(() => db.Sue.collection.insertMany(sueSeed))
-  .then(data => {
-    console.log(data.result.n + " records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+
+db.Presidents.remove({})
+    .then(() => db.Presidents.collection.insertMany(presidentSeed))
+    .then(data => {
+        console.log(data.result.n + " records inserted!");
+        process.exit(0);
+    })
+    .catch(err => {
+        console.error(err);
+        process.exit(1);
+    });

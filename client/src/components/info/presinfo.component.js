@@ -2,8 +2,8 @@ import React from "react";
 import Navbar from "../layout/navbar.component";
 import Container from "../container.component";
 import API from "../../utils/API";
-import pres from '../images/bill-clinton.png'
 import { Component } from 'react';
+import Footer from "../layout/footer.component";
 
 export default class PresInfo extends Component {
     state = {
@@ -19,18 +19,27 @@ export default class PresInfo extends Component {
             });
     }
 
+    getPres(pres) {
+        if (pres) {
+            let urlString = "./images/pres/"
+            let splitString = urlString.concat(((pres.replace(/ /g, "-")).toLowerCase()).concat('.png'));
+            return splitString;
+        }
+    }
+
     render() {
         return (
             <Container>
+
                 <Navbar />
                 <div className="container w-75">
 
                     <div className="row p-2 m-2">
-                        <div className="col-sm-12">
+                        <div className="col-sm-12 align-left">
                             <div className="card bg-light m-1 mt-4">
                                 <h5 className="card-header">{this.state.president.number} - {this.state.president.president} </h5>
-                                <div className="card-body">
-                                    <img src={pres} alt="presidents" width="450px"></img>
+                                <div className="card-body pl-0 ml-0">
+                                    <img src={this.getPres(this.state.president.president)} alt="presidents" width="450px"></img>
                                 </div>
                             </div>
                         </div>
@@ -51,6 +60,8 @@ export default class PresInfo extends Component {
                     </div>
 
                 </div>
+                <Footer />
+                
             </Container>
         );
     }

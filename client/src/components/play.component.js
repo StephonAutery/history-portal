@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import API from '../utils/API';
 import Container from "./container.component";
 import Navbar from "./layout/navbar.component";
+import Footer from "./layout/footer.component";
 
 export default class Landing extends Component {
     state = {
@@ -127,6 +128,7 @@ export default class Landing extends Component {
 
                     </form>
                 </div >
+                <Footer />
             </Container>
         )
     }

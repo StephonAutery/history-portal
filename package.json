@@ -14,7 +14,9 @@
     "heroku-postbuild": "npm run build",
     "seed": "node scripts/seed.js"
   },
-  "engines": {"node" : "*"},
+  "engines": {
+    "node": "*"
+  },
   "keywords": [
     "history",
     "racism",
@@ -41,7 +43,10 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.2.2",
+    "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
+    "semantic-ui-react": "^0.88.2",
     "validator": "^13.1.1"
   }
 }

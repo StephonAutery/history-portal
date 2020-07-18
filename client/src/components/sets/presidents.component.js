@@ -4,6 +4,8 @@ import API from '../../utils/API';
 import Container from "../container.component";
 import { Redirect } from "react-router-dom";
 import Navbar from "../layout/navbar.component";
+import Footer from "../layout/footer.component";
+
 
 export default class Questions extends Component {
     state = {
@@ -18,7 +20,6 @@ export default class Questions extends Component {
 
     componentDidMount() {
         if (localStorage.getItem('loginData')) {
-
             API.getPres()
                 .then(res => {
                     this.setState({
@@ -31,13 +32,11 @@ export default class Questions extends Component {
                         presNum: 1,
                     });
                 })
-
         } else {
             this.setState({
                 redirect: "/landing"
             })
         }
-
     }
 
     onValueChange = event => {
@@ -97,6 +96,7 @@ export default class Questions extends Component {
                     </div>
 
                 </div>
+                <Footer />
             </Container >
         )
     }

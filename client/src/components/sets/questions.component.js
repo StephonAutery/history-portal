@@ -4,6 +4,7 @@ import Container from "./../container.component";
 import QInfo from "../info/qInfo.component";
 import { Redirect } from "react-router-dom";
 import Navbar from "../layout/navbar.component";
+import Footer from "../layout/footer.component";
 
 export default class Questions extends Component {
     state = {
@@ -227,6 +228,7 @@ export default class Questions extends Component {
                     </div>
 
                 </div>
+                <Footer />
             </Container>
         )
     }

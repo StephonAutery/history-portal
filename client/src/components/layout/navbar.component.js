@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
 import API from '../../utils/API';
 
 export default class Navbar extends Component {
@@ -11,9 +10,6 @@ export default class Navbar extends Component {
 
     componentDidMount() {
         if (localStorage.getItem('loginData')) {
-            // this.setState({
-            //     userID: (JSON.parse(localStorage.getItem('loginData')))
-            // });
             API.getUserById(this.state.userID.userid)
                 .then(res => {
                     this.setState({
