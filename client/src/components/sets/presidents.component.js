@@ -5,7 +5,6 @@ import Container from "../container.component";
 import { Redirect } from "react-router-dom";
 import Navbar from "../layout/navbar.component";
 import Footer from "../layout/footer.component";
-import DropdownButton from 'react-bootstrap/DropdownButton'
 
 export default class Questions extends Component {
     state = {

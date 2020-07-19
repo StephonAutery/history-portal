@@ -34,7 +34,7 @@ mongoose.connect(
 // passport middleware
 // app.use(passport.initialize());
 
-// passport config
+// // passport config
 // require("./config/passport")(passport);
 
 // if (process.env.NODE_ENV === "production") {
