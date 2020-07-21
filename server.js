@@ -26,6 +26,7 @@ mongoose.connect(
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
+        retryWrites: true
     }
 )
     .then(() => console.log("- mongoDB successfully connected -"))
