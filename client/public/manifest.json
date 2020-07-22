@@ -3,7 +3,7 @@
   "name": "https://history-portal.herokuapp.com",
   "icons": [
     {
-      "src": "Favicon.ico",
+      "src": "favicon.ico",
       "sizes": "16x16",
       "type": "image/png"
     }
