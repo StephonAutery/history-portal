@@ -4,9 +4,41 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 const routes = require("./routes");
 
+// ################ installed but not in use #####################
+// var HttpsProxyAgent = require('https-proxy-agent');
+// var request = require('request');
+// ################ installed but not in use #####################
+
+// ################ QuotaGuard #####################
+var http, options, proxy, url;
+
+http = require("http");
+
+url = require("url");
+
+proxy = url.parse("process.env.QUOTAGUARDSTATIC_URL");
+target  = url.parse("https://history-portal.herokuapp.com");
+
+options = {
+  hostname: proxy.hostname,
+  port: proxy.port || 80,
+  path: target.href,
+  headers: {
+    "Proxy-Authorization": "Basic " + (new Buffer.from("proxy.auth").toString("base64")),
+    "Host" : target.hostname
+  }
+};
+
+http.get(options, function(res) {
+  res.pipe(process.stdout);
+  return console.log("status code", res.statusCode);
+});
+// ################ QuotaGuard #####################
+
 const app = express();
 
 const port = process.env.PORT || 3001; // config for Heroku Deployment
+
 
 // middleware
 app.use(
