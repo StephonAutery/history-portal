@@ -34,34 +34,23 @@ export default class PresInfo extends Component {
                 <Navbar />
                 <div className="container w-75">
 
-                    <div className="row p-2 m-2">
-                        <div className="col-sm-12 align-left">
-                            <div className="card bg-light m-1 mt-4">
-                                <h5 className="card-header">{this.state.president.number} - {this.state.president.president} </h5>
-                                <div className="card-body pl-0 ml-0">
-                                    <img src={this.getPres(this.state.president.president)} alt="presidents" width="450px"></img>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div className="row p-2 m-2">
-                        <div className="col-sm-12">
-                            <div className="card bg-light m-1 mt-4">
-                                <div className="card-body">
-                                    <h5 className="card-text">birth year :  {this.state.president.birth_year}</h5>
-                                    <h5 className="card-text">took office :  {this.state.president.took_office}</h5>
-                                    <h5 className="card-text">left office :  {this.state.president.left_office}</h5>
-                                    <h5 className="card-text">death year :  {this.state.president.death_year}</h5>
-                                    <h5 className="card-text">party :  {this.state.president.party}</h5>
-                                </div>
-                            </div>
-                        </div>
+                    <div className="m-2 jumbotron">
+                        <h3 className="lead">{this.state.president.number} - {this.state.president.president}</h3>
+                        <hr className="my-4" />
+                        <img className="my-2" src={this.getPres(this.state.president.president)} alt="presidents" width="320px"></img>
+                        <hr className="my-4" />
+                        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                        <h5 className="card-text lead">birth year :  {this.state.president.birth_year}</h5>
+                        <h5 className="card-text lead">took office :  {this.state.president.took_office}</h5>
+                        <h5 className="card-text lead">left office :  {this.state.president.left_office}</h5>
+                        <h5 className="card-text lead">death year :  {this.state.president.death_year}</h5>
+                        <h5 className="card-text lead">party :  {this.state.president.party}</h5>
                     </div>
 
                 </div>
                 <Footer />
-                
+
             </Container>
         );
     }
