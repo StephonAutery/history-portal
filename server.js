@@ -4,6 +4,15 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 const routes = require("./routes");
 
+const app = express();
+
+const port = process.env.PORT || 3001; // config for Heroku Deployment
+
+// Serve up static assets for production (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+  }
+
 // ################ installed but not in use #####################
 // var HttpsProxyAgent = require('https-proxy-agent');
 // var request = require('request');
@@ -35,10 +44,6 @@ const routes = require("./routes");
 //   return console.log("status code", res.statusCode);
 // });
 // ################ QuotaGuard #####################
-
-const app = express();
-
-const port = process.env.PORT || 3001; // config for Heroku Deployment
 
 
 // middleware
