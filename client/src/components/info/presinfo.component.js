@@ -34,13 +34,13 @@ export default class PresInfo extends Component {
                 <Navbar />
                 <div className="container w-75">
 
-
-                    <div className="m-2 jumbotron">
+                    <div className="jumbotron">
                         <h3 className="lead">{this.state.president.number} - {this.state.president.president}</h3>
                         <hr className="my-4" />
-                        <img className="my-2" src={this.getPres(this.state.president.president)} alt="presidents" width="320px"></img>
+                        <img src={this.getPres(this.state.president.president)} alt="presidents" width="320px"></img>
                         <hr className="my-4" />
                         <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                        <hr className="my-4" />
                         <h5 className="card-text lead">birth year :  {this.state.president.birth_year}</h5>
                         <h5 className="card-text lead">took office :  {this.state.president.took_office}</h5>
                         <h5 className="card-text lead">left office :  {this.state.president.left_office}</h5>

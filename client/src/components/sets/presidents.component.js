@@ -53,6 +53,45 @@ export default class Questions extends Component {
         );
     }
 
+    carousel(index, pres) {
+        let urlString = "./images/pres/"
+        let splitString = urlString.concat(((pres.president.replace(/ /g, "-")).toLowerCase()).concat('.png'));
+        if (index === 0) {
+            return (
+                <div className="carousel-item active" key={index}>
+                    <img src={splitString} className="d-block w-100" alt="POTUS"></img>
+                    <div className="carousel-caption d-none d-md-block bg-dark">
+                        <h5>{pres.number} - {pres.president}</h5>
+                        <p>{pres.took_office} - {pres.left_office}</p>
+                    </div>
+                </div>
+            );
+        } else {
+            return (
+                <div className="carousel-item" key={index}>
+                    <img src={splitString} className="d-block w-100" alt="POTUS"></img>
+                    <div className="carousel-caption d-none d-md-block bg-dark">
+                        <h5>{pres.number} - {pres.president}</h5>
+                        <p>{pres.took_office} - {pres.left_office}</p>
+                    </div>
+                </div>
+            );
+        }
+    }
+
+    slideInfo(index, pres) {
+        if (index === 0) {
+            return (
+                <li data-target="#carouselExampleCaptions" data-slide-to={index} className="active" key={index}></li>
+            )
+        } else {
+            return (
+                <li data-target="#carouselExampleCaptions" data-slide-to={index} key={index}></li>
+            )
+        }
+
+    }
+
     render() {
         if (this.state.redirect) {
             return <Redirect to={{
@@ -68,54 +107,29 @@ export default class Questions extends Component {
                 <Navbar />
                 <div className="container w-75">
 
+                    <div className="row">
+                        <div className="col-sm-12">
+                            <div className="pl-4 mt-4">
+                                <h5>The Presidents of the United States of America</h5>
+                            </div>
+                        </div>
+                    </div>
 
-                    <div className="row my-4">
+
+                    <div className="row my-4 bg-secondary border border-dark">
                         <div className="col-sm-12 bd-example">
                             <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
 
                                 <ol className="carousel-indicators">
-                                    <li data-target="#carouselExampleCaptions" data-slide-to="0" className="active"></li>
-                                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                                    {this.state.presidents.map((pres, index) => (
+                                        this.slideInfo(index, pres)
+                                    ))}
                                 </ol>
 
                                 <div className="carousel-inner">
-
-                                    {/* <div className="col-sm-12 p-2">
-                                        {this.state.presidents.map((pres, index) => (
-                                            <div key={index} className="card bg-light m-1 mt-4">
-                                                <h6 className="card-header" onClick={() => this.handleFormSubmit(pres._id)}>{pres.number} - {pres.president}</h6>
-                                                <div className="card-body">
-                                                    <h6 className="card-text">{pres.took_office} - {pres.left_office}</h6>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div> */}
-                                    
-                                    <div className="carousel-item active">
-                                        <img src="./images/pres/warren-g-harding.png" className="d-block w-100" alt="POTUS"></img>
-                                        <div className="carousel-caption d-none d-md-block">
-                                            <h5>First slide label</h5>
-                                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                        </div>
-                                    </div>
-
-                                    <div className="carousel-item">
-                                        <img src="./images/pres/abraham-lincoln.png" className="d-block w-100" alt="POTUS"></img>
-                                        <div className="carousel-caption d-none d-md-block">
-                                            <h5>Second slide label</h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        </div>
-                                    </div>
-
-                                    <div className="carousel-item">
-                                        <img src="./images/pres/woodrow-wilson.png" className="d-block w-100" alt="POTUS"></img>
-                                        <div className="carousel-caption d-none d-md-block">
-                                            <h5>Third slide label</h5>
-                                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                        </div>
-                                    </div>
-
+                                    {this.state.presidents.map((pres, index) => (
+                                        this.carousel(index, pres)
+                                    ))}
                                 </div>
 
                                 <a className="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -130,27 +144,7 @@ export default class Questions extends Component {
                             </div>
                         </div>
                     </div>
-
-
-                    {/* <div className="row">
-                        <div className="col-sm-12">
-                            <div className="card bg-light m-1 mt-4">
-                                <h5 className="card-header">1</h5>
-                                <div className="card-body">
-                                    <p className="card-text">2</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
-
-                    <div className="row">
-                        <div className="col-sm-12">
-                            <div className="pl-4 mt-2">
-                                <h5>The Presidents of the United States of America</h5>
-                            </div>
-                        </div>
-                    </div>
-
+                    
                     <div className="row">
                         <div className="col-sm-12 p-2">
                             {this.state.presidents.map((pres, index) => (
