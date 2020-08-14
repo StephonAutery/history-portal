@@ -52,9 +52,9 @@ Express\
 React\
 Node.js
 
-### [History Portal on GitHub](https://github.com/StephonAutery/final-project)
+### [History Portal on GitHub](https://github.com/StephonAutery/history-portal)
 
-### [History Portal deployed site](https://history-portal.herokuapp.com/login)
+### [History Portal deployed site](https://history-portal.herokuapp.com/landing)
 
 ## contributors
 
