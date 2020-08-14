@@ -89,7 +89,6 @@ export default class Questions extends Component {
                 <li data-target="#carouselExampleCaptions" data-slide-to={index} key={index}></li>
             )
         }
-
     }
 
     render() {
@@ -144,7 +143,7 @@ export default class Questions extends Component {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div className="row">
                         <div className="col-sm-12 p-2">
                             {this.state.presidents.map((pres, index) => (
