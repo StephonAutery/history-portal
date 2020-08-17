@@ -39,7 +39,7 @@ export default class PresInfo extends Component {
                         <hr className="my-4" />
                         <img src={this.getPres(this.state.president.president)} alt="presidents" width="320px"></img>
                         <hr className="my-4" />
-                        <p class="lead">The Presidents of the United States of America</p>
+                        <p className="lead">The Presidents of the United States of America</p>
                         <hr className="my-4" />
                         <h5 className="card-text lead">birth year :  {this.state.president.birth_year}</h5>
                         <h5 className="card-text lead">took office :  {this.state.president.took_office}</h5>

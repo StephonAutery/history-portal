@@ -26,7 +26,8 @@ export default class Login extends Component {
             password: this.state.password
         })
             .then(res => {
-                console.log(res);
+                console.log("----- res -")
+                console.log(res.status);
                 if (res.status === 200) {
                     API.getUserId({
                         email: this.state.email
@@ -42,8 +43,9 @@ export default class Login extends Component {
                     });
                 }
             }).catch(err => {
+                console.log(err.response.status);
+                // console.log(this.res.status);
                 console.log("dang!");
-                console.log(err);
             });
     }
 

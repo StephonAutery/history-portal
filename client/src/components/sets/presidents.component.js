@@ -117,20 +117,20 @@ export default class Questions extends Component {
 
                     <div className="row my-4 bg-secondary border border-dark">
                         <div className="col-sm-12 bd-example">
-                            <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
 
+
+
+                            <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
                                 <ol className="carousel-indicators">
                                     {this.state.presidents.map((pres, index) => (
                                         this.slideInfo(index, pres)
                                     ))}
                                 </ol>
-
                                 <div className="carousel-inner">
                                     {this.state.presidents.map((pres, index) => (
                                         this.carousel(index, pres)
                                     ))}
                                 </div>
-
                                 <a className="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
                                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span className="sr-only">Previous</span>
@@ -139,8 +139,10 @@ export default class Questions extends Component {
                                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span className="sr-only">Next</span>
                                 </a>
-
                             </div>
+
+
+
                         </div>
                     </div>
 
