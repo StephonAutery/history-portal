@@ -115,7 +115,7 @@ export default class Questions extends Component {
                     </div>
 
 
-                    <div className="row my-4 bg-secondary border border-dark">
+                    {/* <div className="row my-4 bg-secondary border border-dark">
                         <div className="col-sm-12 bd-example">
 
 
@@ -144,10 +144,10 @@ export default class Questions extends Component {
 
 
                         </div>
-                    </div>
+                    </div> */}
 
-                    <div className="row">
-                        <div className="col-sm-12 p-2">
+                    <div className="row m-4">
+                        <div className="col-sm-12">
                             {this.state.presidents.map((pres, index) => (
                                 <div key={index} className="card bg-light m-1 mt-4">
                                     <h6 className="card-header" onClick={() => this.handleFormSubmit(pres._id)}>{pres.number} - {pres.president}</h6>

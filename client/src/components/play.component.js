@@ -73,8 +73,11 @@ export default class Landing extends Component {
                             <div className="card m-1">
                                 <h5 className="card-header">Question Sets</h5>
                                 <div className="card-body">
-                                    <p className="card-text">Question Sets are created by community activists, historians, public servants and citizens living and working in the Black community.</p>
-                                    <p className="card-text">Question Sets are not tests. The quiz format is intended to make the learning process fun. Your scores are not shared with anyone unless you share them. </p>
+                                    <p className="card-text">Question Sets are created by Community Activists, Historians, Public Servants, Citizens and others living and working in the Unites States of America and concerned about the effects of White Supremecy and it's lasting effects on society.</p>
+                                    <p className="card-text">Question Sets are not tests.</p>
+                                    <p className="card-text">The quiz format is intended to make the learning process fun. Your scores are not shared with anyone unless you share them. </p>
+
+
                                 </div>
                             </div>
 
@@ -83,7 +86,7 @@ export default class Landing extends Component {
 
 
                     <div className="row m-1">
-                        <div className="col-sm-12 mb-2">
+                        <div className="col-sm-12 mb-2 mt-4">
                             <div class="accordion" id="accordionExample">
 
 
@@ -92,20 +95,23 @@ export default class Landing extends Component {
                                         <h2 class="mb-0">
                                             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                                 Stephon Autery
-                                                </button>
+                                            </button>
                                         </h2>
                                     </div>
                                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                         <div className="card-body">
                                             <p className="card-text">
+                                                Stephon created this Question Set for demonstration purposes. This Set includes questions about current events, US History and Pop Culture.
+                                            </p>
+                                            <p className="card-text">
                                                 Stephon Autery identifies as a Black, cis gendered Male. He served 8 years in the United States Marine Corps, worked the last 14 years as a Stay at Home Dad and is now pursuing work as a Full Stack Developer after completeing the UC Berkeley Extension's Full Stack Developer Coding Boot Camp in June of 2020.
-                                                </p>
+                                            </p>
                                             <button
                                                 className="save btn btn-primary"
                                                 onClick={this.playStephon}
                                                 type="submit"
                                                 value="submit">Go to Questions
-                                                </button>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -115,20 +121,20 @@ export default class Landing extends Component {
                                         <h2 class="mb-0">
                                             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                                 Susannah Levy
-                                                </button>
+                                            </button>
                                         </h2>
                                     </div>
                                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                                         <div className="card-body">
                                             <p className="card-text">
                                                 Susannah Levy identifies as a White, cis gendered Female. She has served as an OBGyn/Obstetrics Nurse at <a href="https://zuckerbergsanfranciscogeneral.org/about-us/" target="_blank" rel="noopener noreferrer">San Francisco General Hospital ( SFGH )</a> for the last 23 years and is the Mother of 2 adult children.
-                                                </p>
+                                            </p>
                                             <button
                                                 className="save btn btn-primary"
                                                 onClick={this.playSue}
                                                 type="submit"
                                                 value="submit">Go to Questions
-                                                </button>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -145,14 +151,14 @@ export default class Landing extends Component {
                                     <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
                                         <div className="card-body">
                                             <p className="card-text">
-                                                This Question Set is about Presidents of the United States of America.
-                                                </p>
+                                                This Question Set is still in development and will be updated soon. Once completed it will query the user about the true lives of our nation's leaders, in the meantime enjoy this list of all of the Presidents of the United States of America.
+                                            </p>
                                             <button
                                                 className="save btn btn-primary"
-                                                onClick={this.playSue}
+                                                onClick={this.playPres}
                                                 type="submit"
-                                                value="submit">Go to Questions
-                                                </button>
+                                                value="submit">Go to Presidents
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -169,7 +175,7 @@ export default class Landing extends Component {
                                     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                                         <div className="card-body">
                                             <p className="card-text">
-                                                This will be the location of the Bio and other information about the creator of this question set and it's teaching goals.
+                                                I am actively recruiting Civil Rights Leaders, Community Leaders, Teachers, Health Care Workers and others to create Question Sets that will inform my knowledge of the experiences of others as they go about their daily lives in the United States of America.
                                             </p>
                                             {/* <button
                                                     className="save btn btn-primary"
