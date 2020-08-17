@@ -23,7 +23,7 @@ export default class Navbar extends Component {
         return (
             <div className="container w-75">
 
-                <nav className="navbar m-0 p-0 bg-light">
+                <nav className="navbar m-0 p-0 bg-light border-left border-right">
                     <ul className="nav ">
                         <li className="nav-item">
                             <a className="nav-link active" href="/">History Portal</a>

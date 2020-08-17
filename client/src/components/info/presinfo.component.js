@@ -34,7 +34,7 @@ export default class PresInfo extends Component {
                 <Navbar />
                 <div className="container w-75">
 
-                    <div className="jumbotron">
+                    <div className="jumbotron m-3">
                         <h3 className="lead">{this.state.president.number} - {this.state.president.president}</h3>
                         <hr className="my-4" />
                         <img src={this.getPres(this.state.president.president)} alt="presidents" width="320px"></img>

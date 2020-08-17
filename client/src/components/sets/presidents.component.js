@@ -108,8 +108,9 @@ export default class Questions extends Component {
 
                     <div className="row">
                         <div className="col-sm-12">
-                            <div className="pl-4 mt-4">
+                            <div className="pl-0 mt-4 mb-2">
                                 <h5>The Presidents of the United States of America</h5>
+                                <hr className="pl-0" />
                             </div>
                         </div>
                     </div>
@@ -146,7 +147,7 @@ export default class Questions extends Component {
                         </div>
                     </div> */}
 
-                    <div className="row m-4">
+                    <div>
                         <div className="col-sm-12">
                             {this.state.presidents.map((pres, index) => (
                                 <div key={index} className="card bg-light m-1 mt-4">
