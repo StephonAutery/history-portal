@@ -101,7 +101,7 @@ export default class Landing extends Component {
                                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                         <div className="card-body">
                                             <p className="card-text">
-                                                Stephon created this Question Set for demonstration purposes. This Set includes questions about current events, US History and Pop Culture.
+                                                This Question Set was created for demonstration purposes. This Set includes questions about current events, US History and Pop Culture.
                                             </p>
                                             <p className="card-text">
                                                 Stephon Autery identifies as a Black, cis gendered Male. He served 8 years in the United States Marine Corps, worked the last 15 years as a stay-at-home Dad and is now pursuing work as a Full Stack Developer after completeing the UC Berkeley Extension's Full Stack Developer Coding Boot Camp in June of 2020.
