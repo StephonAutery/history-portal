@@ -37,8 +37,7 @@ export default {
         return axios.get("/api/users");
     },
     // get a single user
-    getUserById: function (_id)
-     {
+    getUserById: function (_id) {
         return axios.get("/api/users/" + _id);
     },
     // get a single user

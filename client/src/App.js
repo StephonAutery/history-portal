@@ -9,6 +9,7 @@ import Landing from "./components/landing.component";
 import Signup from "./components/signup.component";
 import Logout from "./components/logout.component";
 import Login from "./components/login.component";
+import Users from "./components/users.component";
 import Play from "./components/play.component";
 
 class App extends Component {
@@ -58,6 +59,7 @@ class App extends Component {
             <Route path="/sueQuestions" component={sueQuestions} />
             <Route path="/presidents" component={Presidents} />
             <Route path="/presinfo" component={PresInfo} />
+            <Route path="/users" component={Users} />
             <Route path="/play" component={Play} />
           </Switch>
         </Router>

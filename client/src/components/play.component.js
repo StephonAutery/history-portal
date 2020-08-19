@@ -87,27 +87,24 @@ export default class Landing extends Component {
 
                     <div className="row m-1">
                         <div className="col-sm-12 mb-2 mt-2">
-                            <div class="accordion" id="accordionExample">
+                            <div className="accordion" id="accordionExample">
 
 
-                                <div class="card">
-                                    <div class="card-header" id="headingTwo">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <div className="card">
+                                    <div className="card-header" id="headingTwo">
+                                        <h2 className="mb-0">
+                                            <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                                 Stephon Autery
                                             </button>
                                         </h2>
                                     </div>
-                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                         <div className="card-body">
                                             <p className="card-text">
                                                 This Question Set was created for demonstration purposes. This Set includes questions about current events, US History and Pop Culture.
                                             </p>
                                             <p className="card-text">
                                                 Stephon Autery identifies as a Black, cis gendered Male. He served 8 years in the United States Marine Corps, worked the last 15 years as a stay-at-home Dad and is now pursuing work as a Full Stack Developer after completeing the UC Berkeley Extension's Full Stack Developer Coding Boot Camp in June of 2020.
-                                            </p>
-                                            <p className="card-text">
-                                                This application is his final project for the UC Berkeley Coding Bootcamp.
                                             </p>
                                             <button
                                                 className="save btn btn-primary"
@@ -119,15 +116,15 @@ export default class Landing extends Component {
                                     </div>
                                 </div>
 
-                                <div class="card">
-                                    <div class="card-header" id="headingThree">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <div className="card">
+                                    <div className="card-header" id="headingThree">
+                                        <h2 className="mb-0">
+                                            <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                                 Susannah Levy
                                             </button>
                                         </h2>
                                     </div>
-                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                                         <div className="card-body">
                                             <p className="card-text">
                                                 Susannah Levy created this Question Set. This Set includes questions about current events, US History and Pop Culture.
@@ -146,15 +143,15 @@ export default class Landing extends Component {
                                 </div>
 
 
-                                <div class="card">
-                                    <div class="card-header" id="headingFive">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                <div className="card">
+                                    <div className="card-header" id="headingFive">
+                                        <h2 className="mb-0">
+                                            <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                                 Who's Your President?
                                                 </button>
                                         </h2>
                                     </div>
-                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                                    <div id="collapseFive" className="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
                                         <div className="card-body">
                                             <p className="card-text">
                                                 This Question Set is still in development and will be updated soon. Once completed it will query the user about the true lives of our nation's leaders.
@@ -173,15 +170,15 @@ export default class Landing extends Component {
                                 </div>
 
 
-                                <div class="card">
-                                    <div class="card-header" id="headingFour">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <div className="card">
+                                    <div className="card-header" id="headingFour">
+                                        <h2 className="mb-0">
+                                            <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                                 Future Question Set
                                                 </button>
                                         </h2>
                                     </div>
-                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                    <div id="collapseFour" className="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                                         <div className="card-body">
                                             <p className="card-text">
                                                 I am actively recruiting Civil Rights Leaders, Community Leaders, Teachers, Health Care Workers and others to create Question Sets that will inform our knowledge of the experiences of others as they go about their daily lives in the United States of America.

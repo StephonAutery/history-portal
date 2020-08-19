@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import API from '../utils/API';
 import Container from "./container.component";
+import Navbar from "./layout/navbar.component";
 import { Redirect } from "react-router-dom";
 
 export default class Users extends Component {
@@ -13,6 +14,7 @@ export default class Users extends Component {
     componentDidMount() {
         API.getUsers()
             .then(res => {
+                // console.log(res.data);
                 this.setState({
                     users: res.data
                 })
@@ -46,33 +48,31 @@ export default class Users extends Component {
         }
         return (
             <Container>
-                <div className="container radio w-50">
-                    <h3><p>who are you?</p></h3>
-                    <hr />
-                        <div>
-                            {this.state.users.map(user => (
-                                <div className="card p-2 m-4" key={user._id}>
-                                    <p>{ user.name }</p>
-                                    <p>{ user.role }</p>
-                                    <label>
-                                        <input
-                                            type="radio"
-                                            value={user._id}
-                                            checked={this.state.selectedOption === user._id}
-                                            onChange={this.onValueChange}
-                                        />
-                                        &nbsp;&nbsp;{user.f_name} {user.l_name} | {user.race}<br />
-                                    </label>
-                                </div>
-                            ))}
-                            <p>
-                                <button
-                                    onClick={() => this.handleFormSubmit()}
-                                    className="save btn btn-info"
-                                    type="submit">that's me
-                                </button>
-                            </p>
+                <Navbar />
+                <div className="container radio w-75">
+
+                    <div className="row">
+                        <div className="col-sm-12 m-2">
+                            <h3><p>users</p></h3>
+                            <hr />
                         </div>
+                    </div>
+
+                    <div className="row m-2">
+                        {this.state.users.map(user => (
+                            <div className="col-sm-6" key={user._id}>
+                                <div className="card m-2">
+                                    <div className="card-header">{user.name}</div>
+                                    <div className="card-body">
+                                        <p className="card-text">{user.race}</p>
+                                        <p className="card-text">{user.role}</p>
+                                        <p className="card-text">{user.email}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
                 </div>
             </Container>
         )

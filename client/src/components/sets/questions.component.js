@@ -135,7 +135,7 @@ export default class Questions extends Component {
                         </div>
                     </div>
 
-                    <div className="row">
+                    <div className="row m-1">
                         <div className="col-sm-12">
                             {!this.state.answered
                                 ?
@@ -188,12 +188,12 @@ export default class Questions extends Component {
                         </div>
                     </div>
 
-                    <div className="row">
+                    <div className="row m-1">
                         <div className="col-sm-12">
                             <div className="card bg-light m-1">
                                 <div className="card-body">
 
-                                    <div className="card-text">
+                                    <div className="card-text m-0">
                                         {!this.state.answered ?
                                             <button
                                                 onClick={() => this.qAnswered()}

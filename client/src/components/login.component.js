@@ -20,6 +20,13 @@ export default class Login extends Component {
     }
 
     handleFormSubmit = event => {
+        // console.log(this.state.email);
+        // console.log(this.state.password);
+        if (this.state.email === ""){
+            this.setState({
+                redirect: 'play'
+            });
+        }
         event.preventDefault();
         API.loginUser({
             email: this.state.email,
@@ -28,6 +35,7 @@ export default class Login extends Component {
             .then(res => {
                 console.log("----- res -")
                 console.log(res.status);
+
                 if (res.status === 200) {
                     API.getUserId({
                         email: this.state.email
@@ -44,6 +52,11 @@ export default class Login extends Component {
                 }
             }).catch(err => {
                 console.log(err.response.status);
+                if (err.response.status === 400){
+                    console.log("----- bad password -")
+                } else if (err.response.status === 404){
+                    console.log("----- bad username -")
+                }
                 // console.log(this.res.status);
                 console.log("dang!");
             });

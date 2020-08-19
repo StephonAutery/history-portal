@@ -5,6 +5,7 @@ export default class Navbar extends Component {
 
     state = {
         user: "",
+        role: "",
         userID: JSON.parse(localStorage.getItem('loginData'))
     }
 
@@ -13,9 +14,23 @@ export default class Navbar extends Component {
             API.getUserById(this.state.userID.userid)
                 .then(res => {
                     this.setState({
-                        user: res.data.user
+                        user: res.data.user,
+                        role: res.data.user.role
                     });
+                    // console.log(this.state.user.role);
                 });
+        }
+    }
+
+    isAdmin() {
+        if (this.state.user.role === "admin" && this.state.user.role !== "") {
+            return (
+                <li className="nav-item">
+                    <a className="nav-link" href="/users">Users</a>
+                </li>
+            );
+        } else {
+            return ("");
         }
     }
 
@@ -49,6 +64,7 @@ export default class Navbar extends Component {
                         {/* <li className="nav-item">
                             <a className="nav-link" href="/mystats">My Stats</a>
                         </li> */}
+                        {this.isAdmin()}
                     </ul>
                 </nav>
 

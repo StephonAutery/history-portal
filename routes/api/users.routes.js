@@ -10,6 +10,13 @@ const validateLoginInput = require("../../validation/login");
 
 // Load User model
 const User = require("../../models/Users");
+const usersController = require("../../controllers/usersController");
+
+router
+  .route("/")
+  .get(usersController.findAll)
+
+User.find()
 
 // @route POST api/users/register
 // @desc Register user
