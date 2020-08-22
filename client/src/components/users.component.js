@@ -18,7 +18,7 @@ export default class Users extends Component {
                 this.setState({
                     users: res.data
                 })
-            })
+            });
     }
 
     onValueChange = event => {

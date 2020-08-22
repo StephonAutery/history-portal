@@ -4,11 +4,14 @@ import API from '../utils/API';
 import Container from "./container.component";
 import Navbar from "./layout/navbar.component";
 import Footer from "./layout/footer.component";
+import "../utils/button.css";
 
-export default class Landing extends Component {
+export default class Play extends Component {
     state = {
         redirect: "",
-        user: ""
+        user: "",
+        eras: [],
+        eraId: ""
     }
     constructor(props) {
         super(props);
@@ -24,10 +27,17 @@ export default class Landing extends Component {
             })
         }
 
-        API.getUserById(this.props.location.state.id.userid)
+        // API.getUserById(this.props.location.state.id.userid)
+        //     .then(res => {
+        //         this.setState({
+        //             user: res.data.user
+        //         });
+        //     });
+
+        API.getEra()
             .then(res => {
                 this.setState({
-                    user: res.data.user
+                    eras: res.data
                 });
             });
     }
@@ -53,12 +63,21 @@ export default class Landing extends Component {
         });
     }
 
+    getEra(era) {
+        console.log(era);
+        this.setState({
+            eraId: era,
+            redirect: "era"
+        });
+    }
+
     render() {
         if (this.state.redirect) {
             return <Redirect to={{
                 pathname: this.state.redirect,
                 state: {
-                    id: JSON.parse(localStorage.getItem('loginData'))
+                    id: JSON.parse(localStorage.getItem('loginData')),
+                    eraId: this.state.eraId
                 }
             }} />
         }
@@ -73,7 +92,7 @@ export default class Landing extends Component {
                             <div className="card m-2 mt-3">
                                 <h5 className="card-header">Question Sets</h5>
                                 <div className="card-body">
-                                    <p className="card-text">Question Sets are created by Community Activists, Historians, Public Servants, Citizens and others living and working in the Unites States of America and concerned about the effects of White Supremecy and it's lasting effects on society.</p>
+                                    <p className="card-text">Question Sets are created by Community Activists, Historians, Public Servants, Citizens and others living and working in the Unites States of America and concerned about the effects of White Supremecy and it's lasting effects on our society.</p>
                                     <p className="card-text">Question Sets are not tests.</p>
                                     <p className="card-text">The quiz format is intended to make the learning process fun. Your scores are not shared with anyone unless you share them. </p>
 
@@ -174,38 +193,26 @@ export default class Landing extends Component {
                                     <div className="card-header" id="headingFour">
                                         <h2 className="mb-0">
                                             <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                Future Question Set
+                                                Historical Eras of the United States of America
                                                 </button>
                                         </h2>
                                     </div>
-                                    <div id="collapseFour" className="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                                        <div className="card-body">
-                                            <p className="card-text">
-                                                I am actively recruiting Civil Rights Leaders, Community Leaders, Teachers, Health Care Workers and others to create Question Sets that will inform our knowledge of the experiences of others as they go about their daily lives in the United States of America.
-                                            </p>
-                                            {/* <button
-                                                    className="save btn btn-primary"
-                                                    onClick={this.playSue}
-                                                    type="submit"
-                                                    value="submit">Go to Questions
-                                                </button> */}
-                                        </div>
+                                    <div id="collapseFour" className="collapse p-2" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                        {this.state.eras.map((era, index) => (
+                                            <div key={index} className="m-3">
+                                                <span onClick={() => this.getEra(era._id)} className="link-button text-primary"> {era.era} </span><br />{era.start} - {era.end}
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
 
-
-
-
                             </div>
                         </div>
-
-                        {/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
-
                     </div>
+                </div>
 
-                </div >
                 <Footer />
-            </Container>
+            </Container >
         )
     }
 }

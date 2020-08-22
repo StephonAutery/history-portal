@@ -11,6 +11,7 @@ import Logout from "./components/logout.component";
 import Login from "./components/login.component";
 import Users from "./components/users.component";
 import Play from "./components/play.component";
+import Era from "./components/info/eraInfo.component";
 
 class App extends Component {
 
@@ -61,6 +62,7 @@ class App extends Component {
             <Route path="/presinfo" component={PresInfo} />
             <Route path="/users" component={Users} />
             <Route path="/play" component={Play} />
+            <Route path="/era" component={Era} />
           </Switch>
         </Router>
       </div >

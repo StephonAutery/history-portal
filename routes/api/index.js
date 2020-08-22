@@ -4,7 +4,11 @@ const resultsRoutes = require("./results.routes");
 const presRoutes = require("./pres.routes");
 const usersRoutes = require("./users.routes");
 const statsRoutes = require("./stats.routes");
+const eraRoutes = require("./era.routes");
 const { route } = require("./questions.routes");
+
+// era routes
+router.use("/era", eraRoutes);
 
 // questions routes
 router.use("/questions", questionsRoutes);

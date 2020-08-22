@@ -2,15 +2,11 @@ import React from "react";
 
 function QInfo(props) {
     return (
-        <div className="card-text">
-            <p>You answered: {props.response}</p>
-            <p>Correct answer: {props.answer}</p>
-            <hr />
+        <div>
             <p>{props.info}</p>
-                { props.links.map((link, index) => (
-                <p key={index}><a href={ link.link } target="_blank" rel="noopener noreferrer">{link.link}</a></p>
-            )) }
-            <hr />
+            {props.links.map((link, index) => (
+                <p key={index} className="mb-0"><a href={link.link} target="_blank" rel="noopener noreferrer">{link.link}</a></p>
+            ))}
         </div>
     );
 }

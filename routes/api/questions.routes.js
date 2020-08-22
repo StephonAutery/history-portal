@@ -3,13 +3,6 @@ const qController = require("../../controllers/qController");
 
 router
   .route("/")
-  .get(qController.findAll)
-  // .post(qController.create);
-
-// Matches with "/api/questions/:id"
-// router
-//   .route("/:id")
-//   .get(qController.findById)
-//   .delete(qController.remove);
+  .get(qController.findAll);
 
 module.exports = router;

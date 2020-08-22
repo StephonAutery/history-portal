@@ -5,5 +5,6 @@ module.exports = {
     Results: require("./results.model"),
     Sue: require("./sue.model"),
     Stats: require("./stats.model"),
+    Era: require("./era.model")
 };
   

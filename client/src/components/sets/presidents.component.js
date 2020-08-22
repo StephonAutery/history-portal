@@ -5,6 +5,7 @@ import Container from "../container.component";
 import { Redirect } from "react-router-dom";
 import Navbar from "../layout/navbar.component";
 import Footer from "../layout/footer.component";
+import "../../utils/button.css";
 
 export default class Questions extends Component {
     state = {
@@ -149,9 +150,10 @@ export default class Questions extends Component {
 
                     <div>
                         <div className="col-sm-12">
-                            {this.state.presidents.map((pres, index) => (
+                            {
+                            this.state.presidents.map((pres, index) => (
                                 <div key={index} className="card bg-light m-1 mt-4">
-                                    <h6 className="card-header" onClick={() => this.handleFormSubmit(pres._id)}>{pres.number} - {pres.president}</h6>
+                                    <h6 className="card-header ml-4 mt-2 text-primary link-button" onClick={() => this.handleFormSubmit(pres._id)}>{pres.number} - {pres.president}</h6>
                                     <div className="card-body">
                                         <h6 className="card-text">{pres.took_office} - {pres.left_office}</h6>
                                     </div>

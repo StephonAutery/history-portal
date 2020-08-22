@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import API from '../../utils/API';
 import Container from "./../container.component";
 import QInfo from "../info/qInfo.component";
+import QCompare from "../info/qCompare.component";
 import { Redirect } from "react-router-dom";
 import Navbar from "../layout/navbar.component";
 import Footer from "../layout/footer.component";
@@ -135,11 +136,11 @@ export default class Questions extends Component {
                         </div>
                     </div>
 
-                    <div className="row m-1">
+                    <div className="row">
                         <div className="col-sm-12">
                             {!this.state.answered
                                 ?
-                                <div className="card bg-light m-1">
+                                <div className="card bg-light ml-3 mr-3 mt-3">
                                     <div className="card-body">
 
                                         <div className="card-text">
@@ -188,45 +189,58 @@ export default class Questions extends Component {
                         </div>
                     </div>
 
-                    <div className="row m-1">
+                    <div className="row">
                         <div className="col-sm-12">
-                            <div className="card bg-light m-1">
-                                <div className="card-body">
 
-                                    <div className="card-text m-0">
-                                        {!this.state.answered ?
-                                            <button
-                                                onClick={() => this.qAnswered()}
-                                                className="save btn btn-info"
-                                                type="submit">answer
+
+                            {!this.state.answered ?
+                                <div className="m-3">
+                                    <button
+                                        onClick={() => this.qAnswered()}
+                                        className="save btn btn-info"
+                                        type="submit">answer
                                             </button>
-                                            : ""}
-                                        {this.state.answered ?
-                                            <QInfo
-                                                response={this.state.selectedOption}
-                                                answer={this.state.question.answer}
-                                                ID={this.state.question._id}
-                                                info={this.state.question.info}
-                                                links={this.state.question.links}
-                                            />
-                                            : ""}
-                                    </div>
-
-                                    <div className="card-text">
-                                        {this.state.answered ?
-                                            <button
-                                                onClick={() => this.handleFormSubmit()}
-                                                className="save btn btn-danger"
-                                                type="submit">next question
-                                            </button>
-                                            : ""}
-                                    </div>
-
                                 </div>
-                            </div>
+                                : ""}
+
+                            {this.state.answered ?
+                                <div>
+                                    <div className="card bg-light m-3">
+                                        <div className="card-body">
+                                            <div className="card-text m-0">
+                                                <QCompare
+                                                    response={this.state.selectedOption}
+                                                    answer={this.state.question.answer}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="card bg-light m-3">
+                                        <div className="card-body">
+                                            <div className="card-text m-0">
+                                                <QInfo
+                                                    ID={this.state.question._id}
+                                                    info={this.state.question.info}
+                                                    links={this.state.question.links}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                : ""}
+
+                            {this.state.answered ?
+                                <div className="m-3">
+                                    <button
+                                        onClick={() => this.handleFormSubmit()}
+                                        className="save btn btn-danger"
+                                        type="submit">next question
+                                            </button>
+                                </div>
+                                : ""}
+
                         </div>
                     </div>
-
                 </div>
                 <Footer />
             </Container>

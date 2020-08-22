@@ -2,6 +2,14 @@ import axios from "axios";
 
 export default {
     //########     question API's     #####
+    // get era info
+    getEra: function () {
+        return axios.get("/api/era");
+    },
+    getEraById: function (eraId) {
+        console.log(eraId);
+        return axios.get("/api/erainfo/" + eraId);
+    },
     // get all the questions
     getQuestions: function () {
         return axios.get("/api/questions");
