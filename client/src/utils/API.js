@@ -4,10 +4,9 @@ export default {
     //########     question API's     #####
     // get era info
     getEra: function () {
-        return axios.get("/api/era");
+        return axios.get("/api/questions/era");
     },
     getEraById: function (eraId) {
-        console.log(eraId);
         return axios.get("/api/erainfo/" + eraId);
     },
     // get all the questions

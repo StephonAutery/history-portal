@@ -1,8 +1,11 @@
 const router = require("express").Router();
-const eraController = require("../../controllers/eraController");
+// Load Era model
+const Era = require("../../models/era.model");
 
-
-router.route("/")
-    .get(eraController.findAll);
+router.get("/:id", (req, res) => {
+    Era.findOne({ _id: req.params.id }).then(era => {
+        return res.json({ era });
+    })
+});
 
 module.exports = router;

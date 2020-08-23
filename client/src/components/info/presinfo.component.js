@@ -19,7 +19,7 @@ export default class PresInfo extends Component {
             });
     }
 
-    getPres(pres) {
+    getPresImageURL(pres) {
         if (pres) {
             let urlString = "./images/pres/"
             let splitString = urlString.concat(((pres.replace(/ /g, "-")).toLowerCase()).concat('.png'));
@@ -37,7 +37,7 @@ export default class PresInfo extends Component {
                     <div className="jumbotron m-3">
                         <h3 className="lead">{this.state.president.number} - {this.state.president.president}</h3>
                         <hr className="my-4" />
-                        <img src={this.getPres(this.state.president.president)} alt="presidents" width="320px"></img>
+                        <img src={this.getPresImageURL(this.state.president.president)} alt="presidents" width="320px"></img>
                         <hr className="my-4" />
                         <p className="lead">The Presidents of the United States of America</p>
                         <hr className="my-4" />

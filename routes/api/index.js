@@ -8,12 +8,13 @@ const eraRoutes = require("./era.routes");
 const { route } = require("./questions.routes");
 
 // era routes
-router.use("/era", eraRoutes);
+router.use("/erainfo", eraRoutes);
 
 // questions routes
 router.use("/questions", questionsRoutes);
 router.use("/questions/sue", questionsRoutes);
 router.use("/questions/pres", questionsRoutes);
+router.use("/questions/era", questionsRoutes);
 
 // // history routes
 // router.use("/history", historyRoutes);

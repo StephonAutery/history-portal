@@ -10,11 +10,13 @@ mongoose.connect(
 // create the data objects
 const eraSeed = [
 	{
-		era: "Colinial Period",
+		era: "Colonial Period",
 		start: "1607",
 		end: "1765",
-		description: "The colonial history of the United States covers the history of European colonization of America from the early 16th century until the incorporation of the colonies into the United States of America. In the late 16th century, England, France, Castile, and the Dutch Republic launched major colonization programs in America.[1] The death rate was very high among those who arrived first, and some early attempts disappeared altogether, such as the English Lost Colony of Roanoke. Nevertheless, successful colonies were established within several decades.",
-        links: [{ link: "https://en.wikipedia.org/wiki/Colonial_history_of_the_United_States" }]
+		description: "The colonial history of the United States covers the history of European colonization of America from the early 16th century until the incorporation of the colonies into the United States of America. In the late 16th century, England, France, Castile, and the Dutch Republic launched major colonization programs in America. The death rate was very high among those who arrived first, and some early attempts disappeared altogether, such as the English Lost Colony of Roanoke. Nevertheless, successful colonies were established within several decades.",
+        links: [
+			{ link: "https://en.wikipedia.org/wiki/Colonial_history_of_the_United_States" }
+		]
     },
 	{
 		era: "American Revolution",

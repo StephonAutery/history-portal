@@ -4,10 +4,10 @@ import Footer from "../layout/footer.component";
 import Container from "../container.component";
 import API from '../../utils/API';
 
-
 export default class Era extends Component {
     state = {
-        era: []
+        era: [],
+        linkData: []
     }
 
     componentDidMount() {
@@ -21,7 +21,8 @@ export default class Era extends Component {
         API.getEraById(this.props.location.state.eraId)
             .then(res => {
                 this.setState({
-                    era: res.data
+                    era: res.data.era,
+                    linkData: res.data.era.links
                 });
             });
 
@@ -32,17 +33,24 @@ export default class Era extends Component {
         //         });
         //     });
     }
-
+    // 
     render() {
-        console.log(this.props.location.state.eraId);
         return (
             <Container>
                 <Navbar />
                 <div className="container w-75">
-                    <p className="m-2 p-2">lets begin here ...</p>
-                    {/* {props.links.map((link, index) => (
-                <p key={index} className="mb-0"><a href={link.link} target="_blank" rel="noopener noreferrer">{link.link}</a></p>
-            ))} */}
+                    <div className="card m-4">
+                        <h5 className="card-header">{this.state.era.era}</h5>
+                        <div className="card-body">
+                            <p className="card-text">{this.state.era.start} - {this.state.era.end}</p>
+                            <p className="card-text">{this.state.era.description}</p>
+                            {this.state.linkData.map((link, index) => (
+                                <p key={index} className="mb-0"><a href={link.link} target="_blank" rel="noopener noreferrer">{link.link}</a></p>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <div>
                 </div>
                 <Footer />
             </Container>

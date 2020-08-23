@@ -16,7 +16,11 @@ const questionsSeed = [
 		c: "2016",
 		answer: "a",
 		info: "The US Civil War began in April of 1861 when secessionist forces attacked Fort Sumter in South Carolina shortly after the inauguration of President Benjamin Franklin.",
-		links: [{ link: "https://en.wikipedia.org/wiki/American_Civil_War" }]
+		links: [
+			{ link: "https://en.wikipedia.org/wiki/American_Civil_War" },
+			{ link: "https://en.wikipedia.org/wiki/American_Civil_War" },
+			{ link: "https://en.wikipedia.org/wiki/American_Civil_War" }
+		]
 	},
 	{
 		question: "How old is Bernie Sanders?",

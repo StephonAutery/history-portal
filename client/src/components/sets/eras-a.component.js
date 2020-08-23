@@ -18,7 +18,6 @@ export default class Play extends Component {
         this.playStephon = this.playStephon.bind(this);
         this.playSue = this.playSue.bind(this);
         this.playPres = this.playPres.bind(this);
-        this.playEra = this.playEra.bind(this);
     }
 
     componentDidMount() {
@@ -63,19 +62,14 @@ export default class Play extends Component {
             redirect: "presidents"
         });
     }
-    playEra(event) {
-        event.preventDefault();
+
+    getEra(era) {
+        console.log(era);
         this.setState({
-            redirect: "eras"
+            eraId: era,
+            redirect: "era"
         });
     }
-
-    // getEra(era) {
-    //     this.setState({
-    //         eraId: era,
-    //         redirect: "era"
-    //     });
-    // }
 
     render() {
         if (this.state.redirect) {
@@ -195,43 +189,25 @@ export default class Play extends Component {
                                 </div>
 
 
-
                                 <div className="card">
                                     <div className="card-header" id="headingFour">
                                         <h2 className="mb-0">
                                             <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                Historical Eras of the United States of America
+                                                Historical ----- Eras of the United States of America
                                                 </button>
                                         </h2>
                                     </div>
                                     <div id="collapseFour" className="collapse p-2" aria-labelledby="headingFour" data-parent="#accordionExample">
-                                        <div className="card-body">
-                                            <p className="card-text">
-                                                This Question Set is still in development and will be updated soon. Once completed it will query the user about the Eras of Unites States History.
-                                            </p>
-                                            <p className="card-text">
-                                                In the meantime enjoy this list of all of the Eras of the United States of America.
-                                            </p>
-                                            <button
-                                                className="save btn btn-primary"
-                                                onClick={this.playEra}
-                                                type="submit"
-                                                value="submit">Got to US Eras
-                                            </button>
-                                        </div>
+                                        {this.state.eras.map((era, index) => (
+                                            <div key={index} className="m-3">
+                                                <span onClick={() => this.getEra(era._id)} className="link-button text-primary"> {era.era} </span><br />{era.start} - {era.end}
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
 
                             </div>
                         </div>
-
-
-
-
-
-
-
-
                     </div>
                 </div>
 

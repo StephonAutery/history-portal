@@ -59,11 +59,11 @@ export default class Navbar extends Component {
                             <a className="nav-link" href="/presidents">Presidents</a>
                         </li>
                         <li className="nav-item">
+                            <a className="nav-link" href="/eras">US Eras</a>
+                        </li>
+                        <li className="nav-item">
                             <a className="nav-link" href="/logout">Logout</a>
                         </li>
-                        {/* <li className="nav-item">
-                            <a className="nav-link" href="/mystats">My Stats</a>
-                        </li> */}
                         {this.isAdmin()}
                     </ul>
                 </nav>

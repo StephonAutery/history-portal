@@ -16,6 +16,12 @@ module.exports = {
           .then(dbPres => res.json(dbPres))
           .catch(err => res.status(422).json(err));
         break;
+      case "/api/questions/era":
+        db.Era
+          .find()
+          .then(dbEra => res.json(dbEra))
+          .catch(err => res.status(422).json(err));
+        break;
       case "/api/questions":
         db.Question
           .find()
